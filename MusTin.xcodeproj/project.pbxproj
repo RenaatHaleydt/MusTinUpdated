@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		831A494F21F35CC000A5D0D8 /* LikedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A494E21F35CC000A5D0D8 /* LikedListTableViewController.swift */; };
+		831A495221F3787300A5D0D8 /* LikedArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A495121F3787300A5D0D8 /* LikedArtistTableViewCell.swift */; };
 		83A07DF021CFEAB500B9B98C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A07DEF21CFEAB500B9B98C /* AppDelegate.swift */; };
 		83A07DF221CFEAB500B9B98C /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A07DF121CFEAB500B9B98C /* MusicViewController.swift */; };
 		83A07DF521CFEAB500B9B98C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A07DF321CFEAB500B9B98C /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		831A494E21F35CC000A5D0D8 /* LikedListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedListTableViewController.swift; sourceTree = "<group>"; };
+		831A495121F3787300A5D0D8 /* LikedArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedArtistTableViewCell.swift; sourceTree = "<group>"; };
 		83A07DEC21CFEAB500B9B98C /* MusTin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusTin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A07DEF21CFEAB500B9B98C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83A07DF121CFEAB500B9B98C /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		831A495021F3785800A5D0D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				831A495121F3787300A5D0D8 /* LikedArtistTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		83A07DE321CFEAB500B9B98C = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 		83A07DEE21CFEAB500B9B98C /* MusTin */ = {
 			isa = PBXGroup;
 			children = (
+				831A495021F3785800A5D0D8 /* Views */,
 				831A494921F3377B00A5D0D8 /* Resources */,
 				83A07DEF21CFEAB500B9B98C /* AppDelegate.swift */,
 				83A07DFB21CFEAB600B9B98C /* Info.plist */,
@@ -325,6 +336,7 @@
 			files = (
 				83EBA63C21CFF83A0022D9DC /* Song.swift in Sources */,
 				83EBA63A21CFF7E60022D9DC /* Artist.swift in Sources */,
+				831A495221F3787300A5D0D8 /* LikedArtistTableViewCell.swift in Sources */,
 				83A8764921E7AA70002E4EED /* Artists.swift in Sources */,
 				831A494F21F35CC000A5D0D8 /* LikedListTableViewController.swift in Sources */,
 				83A07DF221CFEAB500B9B98C /* MusicViewController.swift in Sources */,

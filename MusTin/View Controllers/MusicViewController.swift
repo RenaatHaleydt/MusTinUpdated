@@ -219,33 +219,7 @@ class MusicViewController: UIViewController {
     }
     
     func giveNameOfFile(artiest: Artist, song: Song) -> String {
-        return "\(artiest.name) - \(artiest.album.name) - \(artiest.album.year) - \(giveGenre(genre: artiest.album.genre)) - \(song.title)"
-    }
-    
-    //TODOTODOTODOTODO: deze methode kan naar class Artist verhuizen!
-    func giveGenre(genre: Genre) -> String {
-        switch genre {
-        case Genre.alternative:
-            return "Alternative"
-        case Genre.alternativeRock:
-            return "Alternative Rock"
-        case Genre.dance:
-            return "Dance"
-        case Genre.electronic:
-            return "Electronic"
-        case Genre.indie:
-            return "Indie"
-        case Genre.metal:
-            return "Metal"
-        case Genre.punk:
-            return "Punk"
-        case Genre.punkRock:
-            return "Punk-Rock"
-        case Genre.rock:
-            return "Rock"
-        default:
-            return "none"
-        }
+        return "\(artiest.name) - \(artiest.album.name) - \(artiest.album.year) - \(artiest.album.giveGenreInString(genre: artiest.album.genre)) - \(song.title)"
     }
     
     func moveUnPlayedArtistToPlayed(art: Artist) {
