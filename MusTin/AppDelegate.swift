@@ -15,11 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // TODOTODOTODOTODO: Hier moet de data opgehaald worden! Misschien de player opnieuw oproepen?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        if geladen == false {
-//            _ = ArtistModelController()
-//            geladen = true
-//        }
+        
         ArtistModelController.fetchSavedUnplayedArtistsData()
+        ArtistModelController.fetchSavedPlayedArtistsData()
+        ArtistModelController.fetchSavedLikedArtistsData()
+        ArtistModelController.fetchSavedDislikedArtistsData()
         return true
     }
 
@@ -36,6 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 
         ArtistModelController.saveUnplayedArtistsData()
+        ArtistModelController.savePlayedArtistsData()
+        ArtistModelController.saveLikedArtistsData()
+        ArtistModelController.saveDislikedArtistsData()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {

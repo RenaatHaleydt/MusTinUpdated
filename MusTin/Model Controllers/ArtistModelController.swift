@@ -10,7 +10,7 @@ import Foundation
 
 class ArtistModelController {
     static var unplayedArtists: [Artist] = []
-    static var playedArtists = [Artist]()
+    static var playedArtists: [Artist] = []
     static var likedArtists: [Artist] = [] {
         didSet {
             NotificationCenter.default.post(name: ArtistModelController.likedArtistsNotification, object: nil)
@@ -43,6 +43,66 @@ class ArtistModelController {
         }
     }
     
+    static func savePlayedArtistsData() {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL =  documentsDirectory.appendingPathComponent("playedArtists").appendingPathExtension("plist")
+        
+        let propertyListEncoder = PropertyListEncoder()
+        let encodedPlayedArtists = try? propertyListEncoder.encode(ArtistModelController.playedArtists)
+        
+        try? encodedPlayedArtists?.write(to: archiveURL, options: .noFileProtection)// .noFileProtection is om de documents later te kunnen wijzigen
+    }
+    
+    static func fetchSavedPlayedArtistsData() {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL =  documentsDirectory.appendingPathComponent("playedArtists").appendingPathExtension("plist")
+        
+        let propertyListDecoder = PropertyListDecoder()
+        if let fetchedPlayedArtists = try? Data(contentsOf: archiveURL), let decodedPlayedArtists = try? propertyListDecoder.decode(Array<Artist>.self, from: fetchedPlayedArtists) {
+            ArtistModelController.playedArtists = decodedPlayedArtists
+        }
+    }
+    
+    static func saveLikedArtistsData() {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL =  documentsDirectory.appendingPathComponent("likedArtists").appendingPathExtension("plist")
+        
+        let propertyListEncoder = PropertyListEncoder()
+        let encodedLikedArtists = try? propertyListEncoder.encode(ArtistModelController.likedArtists)
+        
+        try? encodedLikedArtists?.write(to: archiveURL, options: .noFileProtection)// .noFileProtection is om de documents later te kunnen wijzigen
+    }
+    
+    static func fetchSavedLikedArtistsData() {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL =  documentsDirectory.appendingPathComponent("likedArtists").appendingPathExtension("plist")
+        
+        let propertyListDecoder = PropertyListDecoder()
+        if let fetchedLikedArtists = try? Data(contentsOf: archiveURL), let decodedLikedArtists = try? propertyListDecoder.decode(Array<Artist>.self, from: fetchedLikedArtists) {
+            ArtistModelController.likedArtists = decodedLikedArtists
+        }
+    }
+    
+    static func saveDislikedArtistsData() {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL =  documentsDirectory.appendingPathComponent("dislikedArtists").appendingPathExtension("plist")
+        
+        let propertyListEncoder = PropertyListEncoder()
+        let encodedDislikedArtists = try? propertyListEncoder.encode(ArtistModelController.dislikedArtists)
+        
+        try? encodedDislikedArtists?.write(to: archiveURL, options: .noFileProtection)// .noFileProtection is om de documents later te kunnen wijzigen
+    }
+    
+    static func fetchSavedDislikedArtistsData() {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL =  documentsDirectory.appendingPathComponent("dislikedArtists").appendingPathExtension("plist")
+        
+        let propertyListDecoder = PropertyListDecoder()
+        if let fetchedDislikedArtists = try? Data(contentsOf: archiveURL), let decodedDislikedArtists = try? propertyListDecoder.decode(Array<Artist>.self, from: fetchedDislikedArtists) {
+            ArtistModelController.dislikedArtists = decodedDislikedArtists
+        }
+    }
+    
     func readSongsFromHardDisk() {
         var artiest: Artist?
         let songFolderURL = URL(fileURLWithPath: Bundle.main.resourcePath!)
@@ -68,19 +128,6 @@ class ArtistModelController {
                     albumTitel = str[1]
                     jaar = Int(str[2])
                     gen = str[3]
-                    //                    switch str[3].lowercased() {
-                    //                        case "rock": gen = Genre.rock
-                    //                        case "punk": gen = Genre.punk
-                    //                        case "metal": gen = Genre.metal
-                    //                        case "dance": gen = Genre.dance
-                    //                        case "electronic": gen = Genre.electronic
-                    //                        case "indie": gen = Genre.indie
-                    //                        case "alternative": gen = Genre.alternative
-                    //                        case "alternative rock": gen = Genre.alternativeRock
-                    //                        case "punk-rock": gen = Genre.punkRock
-                    //                        default:
-                    //                            gen = Genre.none
-                    //                    }
                     songTitel = str[str.count-1]
                     
                     artiest = Artist(naam: artiestenNaam, al: Album(naam: albumTitel, foto: "", liedjes: [Song(titel: songTitel, type: ".mp3")], jaar: jaar!, gen: gen))
