@@ -14,12 +14,18 @@ class LikedListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = editButtonItem
         
         likedArtists = Artists().artists
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 50.0
     }
 
-    // MARK: - Table view data source
+    // Code komt uit handboek van Apple
+    @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
+        let tableViewEditingMode = tableView.isEditing
+        tableView.setEditing(!tableViewEditingMode, animated: true)
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

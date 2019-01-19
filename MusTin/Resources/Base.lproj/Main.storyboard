@@ -204,9 +204,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="MFe-qQ-sp6">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Liked Artists" id="PwO-Ba-Zdm">
+                                    <barButtonItem key="leftBarButtonItem" systemItem="edit" id="pfG-hf-SC7">
+                                        <connections>
+                                            <action selector="editButtonTapped:" destination="ANM-9p-6dW" id="IAn-WJ-5MO"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LikedArtistCell" id="SqP-xf-pu1" customClass="LikedArtistTableViewCell" customModule="MusTin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="LikedArtistCell" id="SqP-xf-pu1" customClass="LikedArtistTableViewCell" customModule="MusTin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SqP-xf-pu1" id="JTH-kt-Wp9">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -218,7 +231,7 @@
                                                 <stackView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oia-gS-x0o">
                                                     <rect key="frame" x="0.0" y="0.0" width="310" height="33.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="ArtistNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2M-Aj-iPh">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="ArtistNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2M-Aj-iPh">
                                                             <rect key="frame" x="0.0" y="0.0" width="310" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                             <nil key="textColor"/>
@@ -227,8 +240,8 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="EHQ-w5-f07">
                                                             <rect key="frame" x="0.0" y="19.5" width="310" height="14"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AlbumTitleAndYearLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0f-Xd-j05">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="186.5" height="14"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="AlbumTitleAndYearLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0f-Xd-j05">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="14"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -266,6 +279,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="uCi-e9-0ee"/>
+                    <connections>
+                        <outlet property="editButtonItem" destination="pfG-hf-SC7" id="2Kq-7v-QCi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ib7-c9-wtC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
