@@ -10,9 +10,12 @@ import UIKit
 
 class LikedListTableViewController: UITableViewController {
 
+    var likedArtists: [Artist] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        likedArtists = Artists().artists
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,24 +26,27 @@ class LikedListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if section == 0 {
+            return likedArtists.count
+        } else{
+            return 0
+        }
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LikedArtistCell", for: indexPath)
 
         // Configure the cell...
+        let artist = likedArtists[indexPath.row]
+        cell.textLabel?.text = artist.name
+        cell.detailTextLabel?.text = artist.album.name
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
