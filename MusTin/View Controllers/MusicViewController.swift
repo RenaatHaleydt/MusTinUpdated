@@ -9,13 +9,13 @@
 import UIKit
 import AVFoundation
 
+var audioPlayer: AVAudioPlayer?
+
 class MusicViewController: UIViewController {
     //---------------------------------------properties----------------------------------------------
-    var audioPlayer: AVAudioPlayer?
+    
     var currentArtist: Artist?
     var currentSong: Song?
-    var unPlayedArtists: [Artist] = []
-    var playedArtists: [Artist] = []
     var firstTime = true
     var tellerSongs = 0
     
@@ -33,11 +33,14 @@ class MusicViewController: UIViewController {
     //---------------------------------ViewController methods----------------------------------------
     
     override func viewDidLoad() {
+        if ArtistModelController.unplayedArtists.isEmpty {
+            _ = ArtistModelController()
+        }
+        
         audioPlayer = AVAudioPlayer()
-        unPlayedArtists =  Artists().artists
         print("Lijst met unPlayed in het begin!")
-        for ar in unPlayedArtists {
-            print(ar.name)
+        for ar in ArtistModelController.unplayedArtists {
+            print(giveNameOfFile(artiest: ar, song: ar.album.songs[0]))
         }
         showNextArtist()
         initializeAudioPlayer()
@@ -64,11 +67,11 @@ class MusicViewController: UIViewController {
             return
         }
         
-        if self.audioPlayer!.isPlaying {
-            self.audioPlayer?.pause()
+        if audioPlayer!.isPlaying {
+            audioPlayer?.pause()
             //playButton.setImage(UIImage(named: "Play.png"), for: .normal)
         } else {
-            self.audioPlayer?.play()
+            audioPlayer?.play()
             //playButton.setImage(UIImage(named: "Pause.png"), for: .normal)
         }
         checkPlayOrPause()
@@ -93,18 +96,17 @@ class MusicViewController: UIViewController {
         if sender.state == .ended {
             if sender.direction == .right {
                 likeArtist(art: currentArtist!)
-                showAlert(title: "Liked", message: "You liked the \n\(currentArtist!.name)!")
+                showAlert(title: "Liked", message: "You liked \n\(currentArtist!.name)!")
                 showNextArtist()
                 playSong(artist: currentArtist!, song: currentSong!)
             }
         }
     }
     
-    
     @IBAction func ArtistSwipedLeft(_ sender: UISwipeGestureRecognizer) {
         if sender.state == .ended {
             if sender.direction == .left {
-                unlikeArtist(art: currentArtist!)
+                dislikeArtist(art: currentArtist!)
                 showAlert(title: "Not liked", message: "You didn't like \n\(currentArtist!.name)!")
                 showNextArtist()
                 playSong(artist: currentArtist!, song: currentSong!)
@@ -120,7 +122,7 @@ class MusicViewController: UIViewController {
     }
     
     func checkPlayOrPause() {
-        if self.audioPlayer!.isPlaying {
+        if audioPlayer!.isPlaying {
             playButton.setImage(UIImage(named: "Pause.png"), for: .normal)
         } else {
             playButton.setImage(UIImage(named: "Play.png"), for: .normal)
@@ -152,9 +154,9 @@ class MusicViewController: UIViewController {
         //DispatchQueue.main.async {
             let currentSongURL = Bundle.main.url(forResource: self.giveNameOfFile(artiest: artist, song: song), withExtension: song.xtension)
             do {
-                try self.audioPlayer = AVAudioPlayer(contentsOf: currentSongURL!)
-                self.audioPlayer!.volume = self.volumeSlider.value
-                self.audioPlayer!.play()
+                try audioPlayer = AVAudioPlayer(contentsOf: currentSongURL!)
+                audioPlayer!.volume = self.volumeSlider.value
+                audioPlayer!.play()
                 checkPlayOrPause()
             }
             catch {
@@ -165,18 +167,18 @@ class MusicViewController: UIViewController {
     }
     
     func showNextArtist() {
-        for ar in unPlayedArtists {
+        for ar in ArtistModelController.unplayedArtists {
             print("Bij begin van methode \(ar.name)")
         }
-        if unPlayedArtists.isEmpty {
+        if ArtistModelController.unplayedArtists.isEmpty {
             showAlert(title: "No artists", message: "There are no more artists!")
-            audioPlayer?.stop()
-            for ar in unPlayedArtists {
+            audioPlayer!.stop()
+            for ar in ArtistModelController.unplayedArtists {
                 print("blablablablabla \(ar.name)")
             }
             return
         }
-        guard let ca = unPlayedArtists.randomElement() else {
+        guard let ca = ArtistModelController.unplayedArtists.randomElement() else {
             showAlert(title: "No artists", message: "There are no more artists!")
             return
         }
@@ -191,12 +193,12 @@ class MusicViewController: UIViewController {
         }
     }
     
-    func unlikeArtist(art: Artist) {
-        
+    func dislikeArtist(art: Artist) {
+        ArtistModelController.dislikedArtists.append(art)
     }
     
     func likeArtist(art: Artist) {
-        
+        ArtistModelController.likedArtists.append(art)
     }
     
     func getNextSongFromCurrentArtist() -> Song? {
@@ -219,11 +221,11 @@ class MusicViewController: UIViewController {
     }
     
     func giveNameOfFile(artiest: Artist, song: Song) -> String {
-        return "\(artiest.name) - \(artiest.album.name) - \(artiest.album.year) - \(artiest.album.giveGenreInString(genre: artiest.album.genre)) - \(song.title)"
+        return "\(artiest.name) - \(artiest.album.name) - \(artiest.album.year) - \(artiest.album.genre) - \(song.title)"
     }
     
     func moveUnPlayedArtistToPlayed(art: Artist) {
-        playedArtists.append(unPlayedArtists.remove(at: unPlayedArtists.firstIndex{ $0.name == art.name }!))
+        ArtistModelController.playedArtists.append(ArtistModelController.unplayedArtists.remove(at: ArtistModelController.unplayedArtists.firstIndex{ $0.name == art.name }!))
     }
 }
 

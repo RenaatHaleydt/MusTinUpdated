@@ -16,7 +16,7 @@ class LikedArtistTableViewCell: UITableViewCell {
     func update(with artist: Artist) {
         artistNameLabel.text = artist.name
         albumTitleAndYearLabel.text = "\(artist.album.name) - \(String(artist.album.year))"
-        genreLabel.text = artist.album.giveGenreInString(genre: artist.album.genre)
+        genreLabel.text = artist.album.genre
     }
     
     override func awakeFromNib() {

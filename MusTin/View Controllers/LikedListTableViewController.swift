@@ -9,13 +9,11 @@
 import UIKit
 
 class LikedListTableViewController: UITableViewController {
-
-    var likedArtists: [Artist] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        likedArtists = Artists().artists
+        NotificationCenter.default.addObserver(tableView, selector: #selector(UITableView.reloadData), name: ArtistModelController.likedArtistsNotification, object: nil)
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 50.0
@@ -33,7 +31,7 @@ class LikedListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return likedArtists.count
+            return ArtistModelController.likedArtists.count
         } else{
             return 0
         }
@@ -43,7 +41,7 @@ class LikedListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LikedArtistCell", for: indexPath) as! LikedArtistTableViewCell
 
         // Configure the cell...
-        let artist = likedArtists[indexPath.row]
+        let artist = ArtistModelController.likedArtists[indexPath.row]
         cell.update(with: artist)
 
         return cell
@@ -63,7 +61,7 @@ class LikedListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            likedArtists.remove(at: indexPath.row)
+            ArtistModelController.likedArtists.remove(at: indexPath.row)
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         }

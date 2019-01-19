@@ -1,6 +1,6 @@
 import Foundation
 
-class Artist {
+class Artist: Codable {
     let name: String
     var album: Album
     

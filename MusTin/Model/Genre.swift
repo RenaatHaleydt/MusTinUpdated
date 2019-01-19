@@ -1,5 +1,5 @@
 import Foundation
 
-enum Genre {
+enum Genre{
     case rock, punk, metal, dance, electronic, indie, alternative, alternativeRock, punkRock, none
 }

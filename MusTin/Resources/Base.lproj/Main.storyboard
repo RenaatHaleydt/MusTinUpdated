@@ -208,7 +208,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
-                                <navigationItem title="Liked Artists" id="PwO-Ba-Zdm">
+                                <navigationItem title="Liked Artists" largeTitleDisplayMode="always" id="PwO-Ba-Zdm">
                                     <barButtonItem key="leftBarButtonItem" systemItem="edit" id="pfG-hf-SC7">
                                         <connections>
                                             <action selector="editButtonTapped:" destination="ANM-9p-6dW" id="IAn-WJ-5MO"/>

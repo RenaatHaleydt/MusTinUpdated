@@ -1,13 +1,14 @@
 import Foundation
 
-class Album {
+class Album: Codable {
     let name: String
     let image: String?
     var songs: [Song]
     let year: Int
-    let genre: Genre
+    var genre: String = "None"
+    //let genre: Genre
     
-    init(naam: String, foto: String? = "no image", liedjes: [Song], jaar: Int, gen: Genre = .none) {
+    init(naam: String, foto: String? = "no image", liedjes: [Song], jaar: Int, gen: String) {
         name = naam
         image = foto
         songs = liedjes
@@ -15,7 +16,7 @@ class Album {
         genre = gen
     }
     
-    func giveGenreInString(genre: Genre) -> String {
+    static func giveGenreInString(genre: Genre) -> String {
         switch genre {
         case Genre.alternative:
             return "Alternative"
