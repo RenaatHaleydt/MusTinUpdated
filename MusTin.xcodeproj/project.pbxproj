@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831A494F21F35CC000A5D0D8 /* LikedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A494E21F35CC000A5D0D8 /* LikedListTableViewController.swift */; };
 		83A07DF021CFEAB500B9B98C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A07DEF21CFEAB500B9B98C /* AppDelegate.swift */; };
 		83A07DF221CFEAB500B9B98C /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A07DF121CFEAB500B9B98C /* MusicViewController.swift */; };
 		83A07DF521CFEAB500B9B98C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A07DF321CFEAB500B9B98C /* Main.storyboard */; };
@@ -21,7 +22,6 @@
 		83D03B2A21F1FD4E00EE2B24 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83D03B2421F1FD4E00EE2B24 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 */; };
 		83E22F8321F0CADD002944C7 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E22F8221F0CADD002944C7 /* Genre.swift */; };
 		83E22F8521F105D4002944C7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E22F8421F105D4002944C7 /* SettingsViewController.swift */; };
-		83E22F8721F1B400002944C7 /* LikedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E22F8621F1B400002944C7 /* LikedListViewController.swift */; };
 		83EBA63A21CFF7E60022D9DC /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EBA63921CFF7E60022D9DC /* Artist.swift */; };
 		83EBA63C21CFF83A0022D9DC /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EBA63B21CFF83A0022D9DC /* Song.swift */; };
 		83EBA63E21CFF8550022D9DC /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EBA63D21CFF8550022D9DC /* Album.swift */; };
@@ -45,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		831A494E21F35CC000A5D0D8 /* LikedListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedListTableViewController.swift; sourceTree = "<group>"; };
 		83A07DEC21CFEAB500B9B98C /* MusTin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusTin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A07DEF21CFEAB500B9B98C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83A07DF121CFEAB500B9B98C /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		83D03B2421F1FD4E00EE2B24 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3"; sourceTree = "<group>"; };
 		83E22F8221F0CADD002944C7 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		83E22F8421F105D4002944C7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		83E22F8621F1B400002944C7 /* LikedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedListViewController.swift; sourceTree = "<group>"; };
 		83EBA63921CFF7E60022D9DC /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		83EBA63B21CFF83A0022D9DC /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		83EBA63D21CFF8550022D9DC /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -172,9 +172,9 @@
 		83EBA63721CFF68E0022D9DC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				831A494E21F35CC000A5D0D8 /* LikedListTableViewController.swift */,
 				83A07DF121CFEAB500B9B98C /* MusicViewController.swift */,
 				83E22F8421F105D4002944C7 /* SettingsViewController.swift */,
-				83E22F8621F1B400002944C7 /* LikedListViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -323,10 +323,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83E22F8721F1B400002944C7 /* LikedListViewController.swift in Sources */,
 				83EBA63C21CFF83A0022D9DC /* Song.swift in Sources */,
 				83EBA63A21CFF7E60022D9DC /* Artist.swift in Sources */,
 				83A8764921E7AA70002E4EED /* Artists.swift in Sources */,
+				831A494F21F35CC000A5D0D8 /* LikedListTableViewController.swift in Sources */,
 				83A07DF221CFEAB500B9B98C /* MusicViewController.swift in Sources */,
 				83A07DF021CFEAB500B9B98C /* AppDelegate.swift in Sources */,
 				83EBA63E21CFF8550022D9DC /* Album.swift in Sources */,

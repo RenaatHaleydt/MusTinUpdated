@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8VZ-0N-anx">
-                                <rect key="frame" x="30" y="90" width="260" height="352"/>
+                                <rect key="frame" x="30" y="90" width="260" height="345"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="6Yf-4C-KX3">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="160"/>
@@ -46,10 +46,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="zej-Mz-OSa">
-                                        <rect key="frame" x="0.0" y="262" width="260" height="40"/>
+                                        <rect key="frame" x="0.0" y="262" width="260" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGi-DV-Cws">
-                                                <rect key="frame" x="0.0" y="0.0" width="33.5" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="33.5" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="rXn-AG-7cY"/>
                                                 </constraints>
@@ -59,7 +59,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGV-Kf-ECK">
-                                                <rect key="frame" x="113.5" y="0.0" width="33" height="40"/>
+                                                <rect key="frame" x="113.5" y="0.0" width="33" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="McT-QG-4A9"/>
                                                 </constraints>
@@ -69,7 +69,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIS-mb-O1z">
-                                                <rect key="frame" x="226.5" y="0.0" width="33.5" height="40"/>
+                                                <rect key="frame" x="226.5" y="0.0" width="33.5" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Tym-CD-Hjr"/>
                                                 </constraints>
@@ -81,7 +81,7 @@
                                         </subviews>
                                     </stackView>
                                     <slider opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PlQ-bG-1yF">
-                                        <rect key="frame" x="-2" y="322" width="264" height="31"/>
+                                        <rect key="frame" x="-2" y="315" width="264" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="6eG-V1-v95"/>
                                         </constraints>
@@ -158,22 +158,6 @@
             </objects>
             <point key="canvasLocation" x="6204" y="-549"/>
         </scene>
-        <!--Liked List View Controller-->
-        <scene sceneID="Qxr-lr-dcj">
-            <objects>
-                <viewController id="RlN-Ms-jx0" customClass="LikedListViewController" customModule="MusTin" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nhA-dv-O8H">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="naf-96-XdJ"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="qwp-h8-sWG"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P6O-hu-ATm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4217" y="165"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wvB-sB-ha2">
             <objects>
@@ -186,7 +170,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="J6h-Ep-CRy" kind="relationship" relationship="viewControllers" id="TUh-bo-xGH"/>
-                        <segue destination="RlN-Ms-jx0" kind="relationship" relationship="viewControllers" id="RIp-2w-vEF"/>
+                        <segue destination="ANM-9p-6dW" kind="relationship" relationship="viewControllers" id="bar-GO-OCu"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fje-if-Q0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -211,6 +195,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abZ-XS-0Q3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4216.875" y="-549.29577464788736"/>
+        </scene>
+        <!--Liked List Table View Controller-->
+        <scene sceneID="3nJ-rI-8QF">
+            <objects>
+                <tableViewController id="ANM-9p-6dW" customClass="LikedListTableViewController" customModule="MusTin" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="78n-gt-pUR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SqP-xf-pu1">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SqP-xf-pu1" id="JTH-kt-Wp9">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ANM-9p-6dW" id="ywl-MX-2Zx"/>
+                            <outlet property="delegate" destination="ANM-9p-6dW" id="Ivb-EI-Oyl"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="uCi-e9-0ee"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ib7-c9-wtC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4217" y="161"/>
         </scene>
     </scenes>
     <resources>
