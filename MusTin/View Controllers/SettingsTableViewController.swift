@@ -24,10 +24,6 @@ class SettingsTableViewController: UITableViewController, SelectGenreTableViewCo
         updateGUI()
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        updateGUI()
-//    }
-    
     func updateGUI() {
         SettingsModelController.fetchSavedSettingsData()
         updateGenre()

@@ -231,21 +231,6 @@ class MusicViewController: UIViewController {
         }
     }
     
-    func showNextArtistForFirstTime() {
-        guard let ca = ArtistModelController.unplayedArtists.first else {
-            return
-        }
-        currentArtist = ca
-        moveUnPlayedArtistToPlayed(art: currentArtist!)
-        tellerSongs = 0
-        if let song = getNextSongFromCurrentArtist(){
-            currentSong = song
-            updateGUI(artiest: currentArtist!, currentSong: currentSong!)
-        } else {
-            showAlert(title: "No songs", message: "There are no songs from \(currentArtist!.name)")
-        }
-    }
-    
     func showNextArtist() {
         guard let ca = ArtistModelController.unplayedArtists.first else {
             if firstTime == true { // De lijst van unplayedArtists is in het begin leeg, je wil niet dat hij dan de Alert geeft
@@ -256,6 +241,10 @@ class MusicViewController: UIViewController {
                 return
             }
         }
+        if SettingsModelController.settings?.genre != "Not Set" {
+            ArtistModelController.importSettings()
+        }
+        
         currentArtist = ca
         moveUnPlayedArtistToPlayed(art: currentArtist!)
         tellerSongs = 0

@@ -9,7 +9,7 @@
 import Foundation
 
 class ArtistModelController {
-    var allArtists: [Artist] = []
+    static var allArtists: [Artist] = []
     static var unplayedArtists: [Artist] = []
     {
         didSet {
@@ -31,12 +31,12 @@ class ArtistModelController {
         removeDuplicates()
         //ArtistModelController.unplayedArtists.shuffle()
         ArtistModelController.playedArtists = []
-        allArtists = ArtistModelController.unplayedArtists
+        ArtistModelController.allArtists = ArtistModelController.unplayedArtists
     }
     
     //---------------------------------------Domain methods------------------------------------------------
     func removeDuplicates() {
-        ArtistModelController.unplayedArtists = ArtistModelController.unplayedArtists.filter { !ArtistModelController.likedArtists.contains($0) }.filter( { !ArtistModelController.dislikedArtists.contains($0) }).shuffled()
+        ArtistModelController.unplayedArtists = ArtistModelController.unplayedArtists.filter { !ArtistModelController.likedArtists.contains($0)}.shuffled()
     }
     
     
@@ -45,9 +45,15 @@ class ArtistModelController {
     }
     
     static func importSettings() {
+        //_ = SettingsModelController.init()
         let art = ArtistModelController.unplayedArtists
         let sett = SettingsModelController.settings
+        print(sett!.genre)
+
         ArtistModelController.unplayedArtists = art.filter({ $0.album.genre == sett!.genre })
+        for a in ArtistModelController.unplayedArtists {
+            print(a.name)
+        }
     }
     
     //---------------------------------------Data methods--------------------------------------------------

@@ -18,10 +18,6 @@ class SelectGenreTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        NotificationCenter.default.addObserver(tableView, selector: #selector(UITableView.reloadData), name: ArtistModelController.unplayedArtistsNotification, object: nil)
-
-
     }
 
     // MARK: - Table view data source
