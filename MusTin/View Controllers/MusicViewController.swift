@@ -91,11 +91,30 @@ class MusicViewController: UIViewController {
     @IBAction func volumeSliderMoved(_ sender: UISlider) {
         audioPlayer!.volume = sender.value
     }
+
+    @IBAction func likeButtonPressed(_ sender: UIButton) {
+        guard ArtistModelController.unplayedArtists.count > 0 else {
+            if !ArtistModelController.likedArtists.contains(self.currentArtist!) && !ArtistModelController.dislikedArtists.contains(self.currentArtist!) {
+                likeArtist(art: currentArtist!)
+            }
+            showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists!")
+            audioPlayer!.stop()
+            checkPlayOrPause()
+            return
+        }
+        likeArtist(art: currentArtist!)
+        showAlert(title: "Liked", message: "You liked \n\(currentArtist!.name)!")
+        showNextArtist()
+        playSong(artist: currentArtist!, song: currentSong!)
+    }
     
     @IBAction func artistSwipedRight(_ sender: UISwipeGestureRecognizer) {
         if sender.state == .ended {
             if sender.direction == .right {
                 guard ArtistModelController.unplayedArtists.count > 0 else {
+                    if !ArtistModelController.likedArtists.contains(self.currentArtist!) && !ArtistModelController.dislikedArtists.contains(self.currentArtist!) {
+                        likeArtist(art: currentArtist!)
+                    }
                     showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists!")
                     audioPlayer!.stop()
                     checkPlayOrPause()
@@ -109,10 +128,30 @@ class MusicViewController: UIViewController {
         }
     }
     
+    @IBAction func dislikeButtonPressed(_ sender: UIButton) {
+        guard ArtistModelController.unplayedArtists.count > 0 else {
+            if !ArtistModelController.likedArtists.contains(self.currentArtist!) && !ArtistModelController.dislikedArtists.contains(self.currentArtist!) {
+                dislikeArtist(art: currentArtist!)
+            }
+            showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists!")
+            audioPlayer!.stop()
+            checkPlayOrPause()
+            return
+        }
+        dislikeArtist(art: currentArtist!)
+        showAlert(title: "Not liked", message: "You didn't like \n\(currentArtist!.name)!")
+        showNextArtist()
+        playSong(artist: currentArtist!, song: currentSong!)
+    }
+    
+    
     @IBAction func ArtistSwipedLeft(_ sender: UISwipeGestureRecognizer) {
         if sender.state == .ended {
             if sender.direction == .left {
                 guard ArtistModelController.unplayedArtists.count > 0 else {
+                    if !ArtistModelController.likedArtists.contains(self.currentArtist!) && !ArtistModelController.dislikedArtists.contains(self.currentArtist!) {
+                        dislikeArtist(art: currentArtist!)
+                    }
                     showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists!")
                     audioPlayer!.stop()
                     checkPlayOrPause()
