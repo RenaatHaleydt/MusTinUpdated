@@ -15,20 +15,28 @@
 		8373365621F475A800FF8EB7 /* SettingsModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373365521F475A800FF8EB7 /* SettingsModelController.swift */; };
 		8373365821F477D800FF8EB7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373365721F477D800FF8EB7 /* SettingsTableViewController.swift */; };
 		8373365A21F4A61000FF8EB7 /* SelectGenreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373365921F4A61000FF8EB7 /* SelectGenreTableViewController.swift */; };
-		8373366921F4D94000FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Holiday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373365B21F4D93E00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Holiday.mp3 */; };
-		8373366A21F4D94000FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373365C21F4D93E00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3 */; };
-		8373366B21F4D94000FF8EB7 /* Swift - Fancy - 2019 - Dance -I Like.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373365D21F4D93E00FF8EB7 /* Swift - Fancy - 2019 - Dance -I Like.mp3 */; };
-		8373366C21F4D94000FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Outside.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373365E21F4D93F00FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Outside.mp3 */; };
-		8373366D21F4D94000FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373365F21F4D93F00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 */; };
-		8373366E21F4D94000FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373366021F4D93F00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3 */; };
-		8373366F21F4D94000FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373366121F4D93F00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 */; };
-		8373367021F4D94000FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Summer Is Comming.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373366221F4D93F00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Summer Is Comming.mp3 */; };
-		8373367121F4D94000FF8EB7 /* Swift - Fancy - 2019 - Dance - Is A Cool Language.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373366321F4D93F00FF8EB7 /* Swift - Fancy - 2019 - Dance - Is A Cool Language.mp3 */; };
-		8373367221F4D94000FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Hey Dude.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373366421F4D93F00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Hey Dude.mp3 */; };
-		8373367321F4D94000FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Brunette.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373366521F4D93F00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Brunette.mp3 */; };
-		8373367421F4D94000FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373366621F4D94000FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 */; };
-		8373367521F4D94000FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Inside.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373366721F4D94000FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Inside.mp3 */; };
-		8373367621F4D94000FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Hot Outside.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373366821F4D94000FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Hot Outside.mp3 */; };
+		8373368D21F4EE3A00FF8EB7 /* Summer Here I Come - Copy Of Swift To Test Genre - 2019 - Dance - Copy To Test Genre2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367721F4EE3700FF8EB7 /* Summer Here I Come - Copy Of Swift To Test Genre - 2019 - Dance - Copy To Test Genre2.mp3 */; };
+		8373368E21F4EE3A00FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367821F4EE3700FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre1.mp3 */; };
+		8373368F21F4EE3A00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Holiday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367921F4EE3700FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Holiday.mp3 */; };
+		8373369021F4EE3A00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367A21F4EE3700FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3 */; };
+		8373369121F4EE3A00FF8EB7 /* Swift - Fancy - 2019 - Dance -I Like.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367B21F4EE3700FF8EB7 /* Swift - Fancy - 2019 - Dance -I Like.mp3 */; };
+		8373369221F4EE3A00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367C21F4EE3700FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 */; };
+		8373369321F4EE3A00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367D21F4EE3800FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 */; };
+		8373369421F4EE3A00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367E21F4EE3800FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3 */; };
+		8373369521F4EE3A00FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367F21F4EE3800FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre2.mp3 */; };
+		8373369621F4EE3A00FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Outside.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373368021F4EE3800FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Outside.mp3 */; };
+		8373369721F4EE3A00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Summer Is Comming.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373368121F4EE3800FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Summer Is Comming.mp3 */; };
+		8373369821F4EE3A00FF8EB7 /* Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373368221F4EE3800FF8EB7 /* Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre1.mp3 */; };
+		8373369921F4EE3A00FF8EB7 /* Swift - Fancy - 2019 - Dance - Is A Cool Language.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373368321F4EE3800FF8EB7 /* Swift - Fancy - 2019 - Dance - Is A Cool Language.mp3 */; };
+		8373369A21F4EE3A00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Hey Dude.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373368421F4EE3900FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Hey Dude.mp3 */; };
+		8373369B21F4EE3A00FF8EB7 /* Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373368521F4EE3900FF8EB7 /* Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre2.mp3 */; };
+		8373369C21F4EE3A00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Brunette.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373368621F4EE3900FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Brunette.mp3 */; };
+		8373369D21F4EE3A00FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373368721F4EE3900FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre3.mp3 */; };
+		8373369E21F4EE3A00FF8EB7 /* Summer Here I Come - Copy Of Swift To Test Genre - 2019 - Dance - Copy To Test Genre1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373368821F4EE3900FF8EB7 /* Summer Here I Come - Copy Of Swift To Test Genre - 2019 - Dance - Copy To Test Genre1.mp3 */; };
+		8373369F21F4EE3A00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373368921F4EE3900FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 */; };
+		837336A021F4EE3A00FF8EB7 /* Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373368A21F4EE3900FF8EB7 /* Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre3.mp3 */; };
+		837336A121F4EE3A00FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Inside.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373368B21F4EE3900FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Inside.mp3 */; };
+		837336A221F4EE3A00FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Hot Outside.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373368C21F4EE3A00FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Hot Outside.mp3 */; };
 		83A07DF021CFEAB500B9B98C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A07DEF21CFEAB500B9B98C /* AppDelegate.swift */; };
 		83A07DF221CFEAB500B9B98C /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A07DF121CFEAB500B9B98C /* MusicViewController.swift */; };
 		83A07DF521CFEAB500B9B98C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A07DF321CFEAB500B9B98C /* Main.storyboard */; };
@@ -65,20 +73,28 @@
 		8373365521F475A800FF8EB7 /* SettingsModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelController.swift; sourceTree = "<group>"; };
 		8373365721F477D800FF8EB7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		8373365921F4A61000FF8EB7 /* SelectGenreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreTableViewController.swift; sourceTree = "<group>"; };
-		8373365B21F4D93E00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Holiday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Beagles - Second White Album - 2018 - Rock - Holiday.mp3"; sourceTree = "<group>"; };
-		8373365C21F4D93E00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3"; sourceTree = "<group>"; };
-		8373365D21F4D93E00FF8EB7 /* Swift - Fancy - 2019 - Dance -I Like.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Swift - Fancy - 2019 - Dance -I Like.mp3"; sourceTree = "<group>"; };
-		8373365E21F4D93F00FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Outside.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lode - Please Give Me An A - 2019 - Electronic - Cold Outside.mp3"; sourceTree = "<group>"; };
-		8373365F21F4D93F00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3"; sourceTree = "<group>"; };
-		8373366021F4D93F00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3"; sourceTree = "<group>"; };
-		8373366121F4D93F00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3"; sourceTree = "<group>"; };
-		8373366221F4D93F00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Summer Is Comming.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Beagles - Second White Album - 2018 - Rock - Summer Is Comming.mp3"; sourceTree = "<group>"; };
-		8373366321F4D93F00FF8EB7 /* Swift - Fancy - 2019 - Dance - Is A Cool Language.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Swift - Fancy - 2019 - Dance - Is A Cool Language.mp3"; sourceTree = "<group>"; };
-		8373366421F4D93F00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Hey Dude.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Beagles - Second White Album - 2018 - Rock - Hey Dude.mp3"; sourceTree = "<group>"; };
-		8373366521F4D93F00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Brunette.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "De Sjarels - Demo - 2015 - Alternative Rock - De Brunette.mp3"; sourceTree = "<group>"; };
-		8373366621F4D94000FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3"; sourceTree = "<group>"; };
-		8373366721F4D94000FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Inside.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lode - Please Give Me An A - 2019 - Electronic - Cold Inside.mp3"; sourceTree = "<group>"; };
-		8373366821F4D94000FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Hot Outside.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lode - Please Give Me An A - 2019 - Electronic - Hot Outside.mp3"; sourceTree = "<group>"; };
+		8373367721F4EE3700FF8EB7 /* Summer Here I Come - Copy Of Swift To Test Genre - 2019 - Dance - Copy To Test Genre2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Summer Here I Come - Copy Of Swift To Test Genre - 2019 - Dance - Copy To Test Genre2.mp3"; sourceTree = "<group>"; };
+		8373367821F4EE3700FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre1.mp3"; sourceTree = "<group>"; };
+		8373367921F4EE3700FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Holiday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Beagles - Second White Album - 2018 - Rock - Holiday.mp3"; sourceTree = "<group>"; };
+		8373367A21F4EE3700FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3"; sourceTree = "<group>"; };
+		8373367B21F4EE3700FF8EB7 /* Swift - Fancy - 2019 - Dance -I Like.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Swift - Fancy - 2019 - Dance -I Like.mp3"; sourceTree = "<group>"; };
+		8373367C21F4EE3700FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3"; sourceTree = "<group>"; };
+		8373367D21F4EE3800FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3"; sourceTree = "<group>"; };
+		8373367E21F4EE3800FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3"; sourceTree = "<group>"; };
+		8373367F21F4EE3800FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre2.mp3"; sourceTree = "<group>"; };
+		8373368021F4EE3800FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Outside.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lode - Please Give Me An A - 2019 - Electronic - Cold Outside.mp3"; sourceTree = "<group>"; };
+		8373368121F4EE3800FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Summer Is Comming.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Beagles - Second White Album - 2018 - Rock - Summer Is Comming.mp3"; sourceTree = "<group>"; };
+		8373368221F4EE3800FF8EB7 /* Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre1.mp3"; sourceTree = "<group>"; };
+		8373368321F4EE3800FF8EB7 /* Swift - Fancy - 2019 - Dance - Is A Cool Language.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Swift - Fancy - 2019 - Dance - Is A Cool Language.mp3"; sourceTree = "<group>"; };
+		8373368421F4EE3900FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Hey Dude.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Beagles - Second White Album - 2018 - Rock - Hey Dude.mp3"; sourceTree = "<group>"; };
+		8373368521F4EE3900FF8EB7 /* Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre2.mp3"; sourceTree = "<group>"; };
+		8373368621F4EE3900FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Brunette.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "De Sjarels - Demo - 2015 - Alternative Rock - De Brunette.mp3"; sourceTree = "<group>"; };
+		8373368721F4EE3900FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre3.mp3"; sourceTree = "<group>"; };
+		8373368821F4EE3900FF8EB7 /* Summer Here I Come - Copy Of Swift To Test Genre - 2019 - Dance - Copy To Test Genre1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Summer Here I Come - Copy Of Swift To Test Genre - 2019 - Dance - Copy To Test Genre1.mp3"; sourceTree = "<group>"; };
+		8373368921F4EE3900FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3"; sourceTree = "<group>"; };
+		8373368A21F4EE3900FF8EB7 /* Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre3.mp3"; sourceTree = "<group>"; };
+		8373368B21F4EE3900FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Inside.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lode - Please Give Me An A - 2019 - Electronic - Cold Inside.mp3"; sourceTree = "<group>"; };
+		8373368C21F4EE3A00FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Hot Outside.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lode - Please Give Me An A - 2019 - Electronic - Hot Outside.mp3"; sourceTree = "<group>"; };
 		83A07DEC21CFEAB500B9B98C /* MusTin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusTin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A07DEF21CFEAB500B9B98C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83A07DF121CFEAB500B9B98C /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
@@ -172,9 +188,7 @@
 				83A07DFB21CFEAB600B9B98C /* Info.plist */,
 				83A07DF621CFEAB600B9B98C /* Assets.xcassets */,
 				83D03B1E21F1FD4E00EE2B24 /* Artists */,
-				83EBA63821CFF6990022D9DC /* Supporting Files */,
 				83EBA63721CFF68E0022D9DC /* View Controllers */,
-				83EBA63621CFF6890022D9DC /* View */,
 				83EBA63521CFF6840022D9DC /* Model */,
 			);
 			path = MusTin;
@@ -183,20 +197,28 @@
 		83D03B1E21F1FD4E00EE2B24 /* Artists */ = {
 			isa = PBXGroup;
 			children = (
-				8373366121F4D93F00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 */,
-				8373366521F4D93F00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Brunette.mp3 */,
-				8373365F21F4D93F00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 */,
-				8373366621F4D94000FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 */,
-				8373365C21F4D93E00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3 */,
-				8373366021F4D93F00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3 */,
-				8373366721F4D94000FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Inside.mp3 */,
-				8373365E21F4D93F00FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Outside.mp3 */,
-				8373366821F4D94000FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Hot Outside.mp3 */,
-				8373366321F4D93F00FF8EB7 /* Swift - Fancy - 2019 - Dance - Is A Cool Language.mp3 */,
-				8373365D21F4D93E00FF8EB7 /* Swift - Fancy - 2019 - Dance -I Like.mp3 */,
-				8373366421F4D93F00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Hey Dude.mp3 */,
-				8373365B21F4D93E00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Holiday.mp3 */,
-				8373366221F4D93F00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Summer Is Comming.mp3 */,
+				8373367821F4EE3700FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre1.mp3 */,
+				8373367F21F4EE3800FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre2.mp3 */,
+				8373368721F4EE3900FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre3.mp3 */,
+				8373367C21F4EE3700FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 */,
+				8373368621F4EE3900FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Brunette.mp3 */,
+				8373367D21F4EE3800FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 */,
+				8373368221F4EE3800FF8EB7 /* Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre1.mp3 */,
+				8373368521F4EE3900FF8EB7 /* Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre2.mp3 */,
+				8373368A21F4EE3900FF8EB7 /* Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre3.mp3 */,
+				8373368921F4EE3900FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 */,
+				8373367A21F4EE3700FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3 */,
+				8373367E21F4EE3800FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3 */,
+				8373368B21F4EE3900FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Inside.mp3 */,
+				8373368021F4EE3800FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Outside.mp3 */,
+				8373368C21F4EE3A00FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Hot Outside.mp3 */,
+				8373368821F4EE3900FF8EB7 /* Summer Here I Come - Copy Of Swift To Test Genre - 2019 - Dance - Copy To Test Genre1.mp3 */,
+				8373367721F4EE3700FF8EB7 /* Summer Here I Come - Copy Of Swift To Test Genre - 2019 - Dance - Copy To Test Genre2.mp3 */,
+				8373368321F4EE3800FF8EB7 /* Swift - Fancy - 2019 - Dance - Is A Cool Language.mp3 */,
+				8373367B21F4EE3700FF8EB7 /* Swift - Fancy - 2019 - Dance -I Like.mp3 */,
+				8373368421F4EE3900FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Hey Dude.mp3 */,
+				8373367921F4EE3700FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Holiday.mp3 */,
+				8373368121F4EE3800FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Summer Is Comming.mp3 */,
 			);
 			path = Artists;
 			sourceTree = "<group>";
@@ -213,13 +235,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		83EBA63621CFF6890022D9DC /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		83EBA63721CFF68E0022D9DC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,13 +244,6 @@
 				8373365921F4A61000FF8EB7 /* SelectGenreTableViewController.swift */,
 			);
 			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		83EBA63821CFF6990022D9DC /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,23 +350,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8373366921F4D94000FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Holiday.mp3 in Resources */,
-				8373367421F4D94000FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 in Resources */,
-				8373366D21F4D94000FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 in Resources */,
+				8373369221F4EE3A00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 in Resources */,
+				8373369B21F4EE3A00FF8EB7 /* Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre2.mp3 in Resources */,
+				8373369721F4EE3A00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Summer Is Comming.mp3 in Resources */,
+				8373368E21F4EE3A00FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre1.mp3 in Resources */,
 				83A07DFA21CFEAB600B9B98C /* LaunchScreen.storyboard in Resources */,
-				8373366E21F4D94000FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3 in Resources */,
-				8373366F21F4D94000FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 in Resources */,
+				8373369521F4EE3A00FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre2.mp3 in Resources */,
+				837336A121F4EE3A00FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Inside.mp3 in Resources */,
+				8373369321F4EE3A00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 in Resources */,
+				8373368F21F4EE3A00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Holiday.mp3 in Resources */,
+				8373369D21F4EE3A00FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre3.mp3 in Resources */,
+				837336A021F4EE3A00FF8EB7 /* Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre3.mp3 in Resources */,
+				837336A221F4EE3A00FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Hot Outside.mp3 in Resources */,
+				8373369821F4EE3A00FF8EB7 /* Fool Fighters - Copy Of Lode To Test Genre - 2019 - Electronic - Copy To Test Genre1.mp3 in Resources */,
 				83A07DF721CFEAB600B9B98C /* Assets.xcassets in Resources */,
-				8373367621F4D94000FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Hot Outside.mp3 in Resources */,
-				8373366C21F4D94000FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Outside.mp3 in Resources */,
-				8373367321F4D94000FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Brunette.mp3 in Resources */,
-				8373366B21F4D94000FF8EB7 /* Swift - Fancy - 2019 - Dance -I Like.mp3 in Resources */,
+				8373369A21F4EE3A00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Hey Dude.mp3 in Resources */,
+				8373368D21F4EE3A00FF8EB7 /* Summer Here I Come - Copy Of Swift To Test Genre - 2019 - Dance - Copy To Test Genre2.mp3 in Resources */,
+				8373369921F4EE3A00FF8EB7 /* Swift - Fancy - 2019 - Dance - Is A Cool Language.mp3 in Resources */,
+				8373369621F4EE3A00FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Outside.mp3 in Resources */,
+				8373369C21F4EE3A00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Brunette.mp3 in Resources */,
+				8373369121F4EE3A00FF8EB7 /* Swift - Fancy - 2019 - Dance -I Like.mp3 in Resources */,
+				8373369F21F4EE3A00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 in Resources */,
+				8373369421F4EE3A00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3 in Resources */,
+				8373369021F4EE3A00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3 in Resources */,
+				8373369E21F4EE3A00FF8EB7 /* Summer Here I Come - Copy Of Swift To Test Genre - 2019 - Dance - Copy To Test Genre1.mp3 in Resources */,
 				83A07DF521CFEAB500B9B98C /* Main.storyboard in Resources */,
-				8373367021F4D94000FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Summer Is Comming.mp3 in Resources */,
-				8373367221F4D94000FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Hey Dude.mp3 in Resources */,
-				8373367121F4D94000FF8EB7 /* Swift - Fancy - 2019 - Dance - Is A Cool Language.mp3 in Resources */,
-				8373367521F4D94000FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Inside.mp3 in Resources */,
-				8373366A21F4D94000FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

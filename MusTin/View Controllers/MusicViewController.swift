@@ -16,8 +16,8 @@ class MusicViewController: UIViewController {
     
     var currentArtist: Artist?
     var currentSong: Song?
-    var firstTime = true
-    var tellerSongs = 0
+    var firstTime = true // Is nodig om de player niet te laten beginnen als het scherm geladen is, maar wel wanneer er voor de eerste keer op de playButton gedrukt is.
+    var tellerSongs = 0 // Wordt gebruikt om de teller bij te houden welke song er aan het spelen is
     
     
     //---------------------------------------IBOutlets-----------------------------------------------
@@ -38,10 +38,9 @@ class MusicViewController: UIViewController {
             _ = SettingsModelController()
         }
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(unplayedArtistsHasChange), name: ArtistModelController.unplayedArtistsNotification, object: nil)
-        
         audioPlayer = AVAudioPlayer()
-        showNextArtist()
+        showNextArtistForFirstTime()
+        //showNextArtist()
         initializeAudioPlayer()
         super.viewDidLoad()
     }
@@ -64,19 +63,16 @@ class MusicViewController: UIViewController {
     }
     
     @IBAction func playButtonPressed(_ sender: UIButton) {
-        if firstTime == true {
+        if firstTime == true { // Is nodig om de player niet te laten beginnen als het scherm geladen is, maar wel wanneer er voor de eerste keer op de playButton gedrukt is.
             playSong(artist: currentArtist!, song: currentSong!)
             firstTime = false
-            //playButton.setImage(UIImage(named: "Pause.png"), for: .normal)
             return
         }
         
         if audioPlayer!.isPlaying {
             audioPlayer?.pause()
-            //playButton.setImage(UIImage(named: "Play.png"), for: .normal)
         } else {
             audioPlayer?.play()
-            //playButton.setImage(UIImage(named: "Pause.png"), for: .normal)
         }
         checkPlayOrPause()
         
@@ -143,7 +139,7 @@ class MusicViewController: UIViewController {
         }
     }
     
-    //Deze code is gokopieerd van StackOverflow (https://stackoverflow.com/questions/33861565/how-to-show-a-message-on-screen-for-a-few-seconds)
+    //Deze code is gekopieerd van StackOverflow (https://stackoverflow.com/questions/33861565/how-to-show-a-message-on-screen-for-a-few-seconds)
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
@@ -169,10 +165,6 @@ class MusicViewController: UIViewController {
     }
     
     //-----------------------------------domain methods----------------------------------------------
-    @objc func unplayedArtistsHasChange() {
-        showNextArtist()
-    }
-    
     func initializeAudioPlayer() {
         let currentSongURL = Bundle.main.url(forResource: self.giveNameOfFile(artiest: currentArtist!, song: currentSong!), withExtension: currentSong!.xtension)
         do {
@@ -186,27 +178,42 @@ class MusicViewController: UIViewController {
     }
     
     func playSong(artist: Artist, song: Song) {
-        // Om op de main thread te werken
-        //DispatchQueue.main.async {
-            let currentSongURL = Bundle.main.url(forResource: self.giveNameOfFile(artiest: artist, song: song), withExtension: song.xtension)
-            do {
-                try audioPlayer = AVAudioPlayer(contentsOf: currentSongURL!)
-                audioPlayer!.volume = self.volumeSlider.value
-                audioPlayer!.play()
-                checkPlayOrPause()
-            }
-            catch {
-                print(error)
-            }
-        //}
-        
+        let currentSongURL = Bundle.main.url(forResource: self.giveNameOfFile(artiest: artist, song: song), withExtension: song.xtension)
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: currentSongURL!)
+            audioPlayer!.volume = self.volumeSlider.value
+            audioPlayer!.play()
+            checkPlayOrPause()
+        }
+        catch {
+            print(error)
+        }
+    }
+    
+    func showNextArtistForFirstTime() {
+        guard let ca = ArtistModelController.unplayedArtists.first else {
+            return
+        }
+        currentArtist = ca
+        moveUnPlayedArtistToPlayed(art: currentArtist!)
+        tellerSongs = 0
+        if let song = getNextSongFromCurrentArtist(){
+            currentSong = song
+            updateGUI(artiest: currentArtist!, currentSong: currentSong!)
+        } else {
+            showAlert(title: "No songs", message: "There are no songs from \(currentArtist!.name)")
+        }
     }
     
     func showNextArtist() {
         guard let ca = ArtistModelController.unplayedArtists.first else {
-            showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists!")
-            //audioPlayer!.stop()
-            return
+            if firstTime == true { // De lijst van unplayedArtists is in het begin leeg, je wil niet dat hij dan de Alert geeft
+                return
+            } else {
+                showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists!")
+                //audioPlayer!.stop()
+                return
+            }
         }
         currentArtist = ca
         moveUnPlayedArtistToPlayed(art: currentArtist!)

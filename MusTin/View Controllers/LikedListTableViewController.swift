@@ -63,7 +63,8 @@ class LikedListTableViewController: UITableViewController {
         if editingStyle == .delete {
             ArtistModelController.likedArtists.remove(at: indexPath.row)
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            //tableView.deleteRows(at: [indexPath], with: .fade) // Geeft error!
+            tableView.reloadData()
         }
     }
 
