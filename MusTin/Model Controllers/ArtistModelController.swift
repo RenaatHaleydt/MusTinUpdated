@@ -28,6 +28,7 @@ class ArtistModelController {
     
     init() {
         readSongsFromHardDisk()
+        ArtistModelController.unplayedArtists.shuffle()
         ArtistModelController.playedArtists = []
         allArtists = ArtistModelController.unplayedArtists
     }

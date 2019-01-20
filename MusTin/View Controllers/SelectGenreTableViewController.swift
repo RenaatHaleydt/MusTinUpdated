@@ -19,16 +19,10 @@ class SelectGenreTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(tableView, selector: #selector(UITableView.reloadData), name: ArtistModelController.unplayedArtistsNotification, object: nil)
+//        NotificationCenter.default.addObserver(tableView, selector: #selector(UITableView.reloadData), name: ArtistModelController.unplayedArtistsNotification, object: nil)
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    
 
     // MARK: - Table view data source
 
@@ -47,6 +41,8 @@ class SelectGenreTableViewController: UITableViewController {
 
         // Configure the cell...
         let genre = ArtistModelController.getDistinctGenres()[indexPath.row]
+        
+        cell.textLabel?.text = genre
         
         if genre == self.genre {
             cell.accessoryType = .checkmark

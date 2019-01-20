@@ -41,13 +41,14 @@ class MusicViewController: UIViewController {
 //        NotificationCenter.default.addObserver(self, selector: #selector(unplayedArtistsHasChange), name: ArtistModelController.unplayedArtistsNotification, object: nil)
         
         audioPlayer = AVAudioPlayer()
-        print("Lijst met unPlayed in het begin!")
-        for ar in ArtistModelController.unplayedArtists {
-            print(giveNameOfFile(artiest: ar, song: ar.album.songs[0]))
-        }
         showNextArtist()
         initializeAudioPlayer()
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showNextArtist()
     }
 
     //-------------------------------------IBActions-------------------------------------------------
@@ -98,6 +99,11 @@ class MusicViewController: UIViewController {
     @IBAction func artistSwipedRight(_ sender: UISwipeGestureRecognizer) {
         if sender.state == .ended {
             if sender.direction == .right {
+                guard ArtistModelController.unplayedArtists.count > 0 else {
+                    showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists!")
+                    audioPlayer!.stop()
+                    return
+                }
                 likeArtist(art: currentArtist!)
                 showAlert(title: "Liked", message: "You liked \n\(currentArtist!.name)!")
                 showNextArtist()
@@ -109,6 +115,11 @@ class MusicViewController: UIViewController {
     @IBAction func ArtistSwipedLeft(_ sender: UISwipeGestureRecognizer) {
         if sender.state == .ended {
             if sender.direction == .left {
+                guard ArtistModelController.unplayedArtists.count > 0 else {
+                    showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists!")
+                    audioPlayer!.stop()
+                    return
+                }
                 dislikeArtist(art: currentArtist!)
                 showAlert(title: "Not liked", message: "You didn't like \n\(currentArtist!.name)!")
                 showNextArtist()
@@ -136,7 +147,21 @@ class MusicViewController: UIViewController {
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
-        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
+        Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
+    }
+    
+    func showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let confirmAction = UIAlertAction(title: "Start over", style: .default, handler: {
+            action in
+                self.viewDidLoad()
+        })
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func unwindToMusicView(segue: UIStoryboardSegue) {
@@ -153,6 +178,7 @@ class MusicViewController: UIViewController {
         do {
             try audioPlayer = AVAudioPlayer(contentsOf: currentSongURL!)
             audioPlayer!.volume = self.volumeSlider.value
+            playButton.setImage(UIImage(named: "Play.png"), for: .normal)
         }
         catch {
             print(error)
@@ -177,19 +203,8 @@ class MusicViewController: UIViewController {
     }
     
     func showNextArtist() {
-//        for ar in ArtistModelController.unplayedArtists {
-//            print("Bij begin van methode \(ar.name)")
-//        }
-//        if ArtistModelController.unplayedArtists.isEmpty {
-//            showAlert(title: "No artists", message: "There are no more artists!")
-//            audioPlayer!.stop()
-//            for ar in ArtistModelController.unplayedArtists {
-//                print("blablablablabla \(ar.name)")
-//            }
-//            return
-//        }
-        guard let ca = ArtistModelController.unplayedArtists.randomElement() else {
-            showAlert(title: "No artists", message: "There are no more artists!")
+        guard let ca = ArtistModelController.unplayedArtists.first else {
+            showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists!")
             //audioPlayer!.stop()
             return
         }

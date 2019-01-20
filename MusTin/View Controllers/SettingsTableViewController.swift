@@ -51,6 +51,7 @@ class SettingsTableViewController: UITableViewController, SelectGenreTableViewCo
         
         if segue.identifier == "saveUnwind" {
             SettingsModelController.saveSettingsData()
+            ArtistModelController.importSettings()
         } else {
             if segue.identifier == "SelectGenre" {
                 let destinationViewController = segue.destination as? SelectGenreTableViewController
