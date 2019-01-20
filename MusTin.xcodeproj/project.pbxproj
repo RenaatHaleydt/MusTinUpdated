@@ -11,6 +11,9 @@
 		831A495221F3787300A5D0D8 /* LikedArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A495121F3787300A5D0D8 /* LikedArtistTableViewCell.swift */; };
 		8373364F21F3ABD300FF8EB7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373364E21F3ABD300FF8EB7 /* User.swift */; };
 		8373365221F3ACF200FF8EB7 /* ArtistModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373365121F3ACF200FF8EB7 /* ArtistModelController.swift */; };
+		8373365421F4741500FF8EB7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373365321F4741500FF8EB7 /* Settings.swift */; };
+		8373365621F475A800FF8EB7 /* SettingsModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373365521F475A800FF8EB7 /* SettingsModelController.swift */; };
+		8373365821F477D800FF8EB7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373365721F477D800FF8EB7 /* SettingsTableViewController.swift */; };
 		83A07DF021CFEAB500B9B98C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A07DEF21CFEAB500B9B98C /* AppDelegate.swift */; };
 		83A07DF221CFEAB500B9B98C /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A07DF121CFEAB500B9B98C /* MusicViewController.swift */; };
 		83A07DF521CFEAB500B9B98C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A07DF321CFEAB500B9B98C /* Main.storyboard */; };
@@ -22,7 +25,6 @@
 		83D03B2821F1FD4E00EE2B24 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83D03B2221F1FD4E00EE2B24 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 */; };
 		83D03B2921F1FD4E00EE2B24 /* Who - Frog Fest - 2018 - Punk-Rock - Humans.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83D03B2321F1FD4E00EE2B24 /* Who - Frog Fest - 2018 - Punk-Rock - Humans.mp3 */; };
 		83D03B2A21F1FD4E00EE2B24 /* Boer Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83D03B2421F1FD4E00EE2B24 /* Boer Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 */; };
-		83E22F8521F105D4002944C7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E22F8421F105D4002944C7 /* SettingsViewController.swift */; };
 		83EBA63A21CFF7E60022D9DC /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EBA63921CFF7E60022D9DC /* Artist.swift */; };
 		83EBA63C21CFF83A0022D9DC /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EBA63B21CFF83A0022D9DC /* Song.swift */; };
 		83EBA63E21CFF8550022D9DC /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EBA63D21CFF8550022D9DC /* Album.swift */; };
@@ -50,6 +52,9 @@
 		831A495121F3787300A5D0D8 /* LikedArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedArtistTableViewCell.swift; sourceTree = "<group>"; };
 		8373364E21F3ABD300FF8EB7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8373365121F3ACF200FF8EB7 /* ArtistModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModelController.swift; sourceTree = "<group>"; };
+		8373365321F4741500FF8EB7 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		8373365521F475A800FF8EB7 /* SettingsModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelController.swift; sourceTree = "<group>"; };
+		8373365721F477D800FF8EB7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		83A07DEC21CFEAB500B9B98C /* MusTin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusTin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A07DEF21CFEAB500B9B98C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83A07DF121CFEAB500B9B98C /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +70,6 @@
 		83D03B2221F1FD4E00EE2B24 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3"; sourceTree = "<group>"; };
 		83D03B2321F1FD4E00EE2B24 /* Who - Frog Fest - 2018 - Punk-Rock - Humans.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Who - Frog Fest - 2018 - Punk-Rock - Humans.mp3"; sourceTree = "<group>"; };
 		83D03B2421F1FD4E00EE2B24 /* Boer Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Boer Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3"; sourceTree = "<group>"; };
-		83E22F8421F105D4002944C7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		83EBA63921CFF7E60022D9DC /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		83EBA63B21CFF83A0022D9DC /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		83EBA63D21CFF8550022D9DC /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				8373365121F3ACF200FF8EB7 /* ArtistModelController.swift */,
+				8373365521F475A800FF8EB7 /* SettingsModelController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				83EBA63B21CFF83A0022D9DC /* Song.swift */,
 				83EBA63D21CFF8550022D9DC /* Album.swift */,
 				8373364E21F3ABD300FF8EB7 /* User.swift */,
+				8373365321F4741500FF8EB7 /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,7 +199,7 @@
 			children = (
 				831A494E21F35CC000A5D0D8 /* LikedListTableViewController.swift */,
 				83A07DF121CFEAB500B9B98C /* MusicViewController.swift */,
-				83E22F8421F105D4002944C7 /* SettingsViewController.swift */,
+				8373365721F477D800FF8EB7 /* SettingsTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -344,13 +350,15 @@
 			files = (
 				83EBA63C21CFF83A0022D9DC /* Song.swift in Sources */,
 				83EBA63A21CFF7E60022D9DC /* Artist.swift in Sources */,
+				8373365621F475A800FF8EB7 /* SettingsModelController.swift in Sources */,
 				831A495221F3787300A5D0D8 /* LikedArtistTableViewCell.swift in Sources */,
 				8373365221F3ACF200FF8EB7 /* ArtistModelController.swift in Sources */,
+				8373365421F4741500FF8EB7 /* Settings.swift in Sources */,
 				831A494F21F35CC000A5D0D8 /* LikedListTableViewController.swift in Sources */,
 				83A07DF221CFEAB500B9B98C /* MusicViewController.swift in Sources */,
+				8373365821F477D800FF8EB7 /* SettingsTableViewController.swift in Sources */,
 				83A07DF021CFEAB500B9B98C /* AppDelegate.swift in Sources */,
 				83EBA63E21CFF8550022D9DC /* Album.swift in Sources */,
-				83E22F8521F105D4002944C7 /* SettingsViewController.swift in Sources */,
 				8373364F21F3ABD300FF8EB7 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -35,6 +35,7 @@ class MusicViewController: UIViewController {
     override func viewDidLoad() {
         if ArtistModelController.unplayedArtists.isEmpty {
             _ = ArtistModelController()
+            _ = SettingsModelController()
         }
         
         audioPlayer = AVAudioPlayer()
@@ -134,6 +135,10 @@ class MusicViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
         Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
+    }
+    
+    @IBAction func unwindToMusicView(segue: UIStoryboardSegue) {
+        
     }
     
     //-----------------------------------domain methods----------------------------------------------

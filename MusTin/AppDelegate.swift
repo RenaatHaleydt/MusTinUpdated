@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ArtistModelController.fetchSavedPlayedArtistsData()
         ArtistModelController.fetchSavedLikedArtistsData()
         ArtistModelController.fetchSavedDislikedArtistsData()
+        
+        SettingsModelController.fetchSavedSettingsData()
         return true
     }
 
@@ -39,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ArtistModelController.savePlayedArtistsData()
         ArtistModelController.saveLikedArtistsData()
         ArtistModelController.saveDislikedArtistsData()
+        
+        SettingsModelController.saveSettingsData()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {

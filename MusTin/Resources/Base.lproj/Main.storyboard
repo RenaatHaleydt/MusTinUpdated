@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8VZ-0N-anx">
-                                <rect key="frame" x="30" y="90" width="260" height="345"/>
+                                <rect key="frame" x="30" y="90" width="260" height="352"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="6Yf-4C-KX3">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="160"/>
@@ -46,10 +46,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="zej-Mz-OSa">
-                                        <rect key="frame" x="0.0" y="262" width="260" height="33"/>
+                                        <rect key="frame" x="0.0" y="262" width="260" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGi-DV-Cws">
-                                                <rect key="frame" x="0.0" y="0.0" width="33.5" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="33.5" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="rXn-AG-7cY"/>
                                                 </constraints>
@@ -59,7 +59,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGV-Kf-ECK">
-                                                <rect key="frame" x="113.5" y="0.0" width="33" height="33"/>
+                                                <rect key="frame" x="113.5" y="0.0" width="33" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="McT-QG-4A9"/>
                                                 </constraints>
@@ -69,7 +69,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIS-mb-O1z">
-                                                <rect key="frame" x="226.5" y="0.0" width="33.5" height="33"/>
+                                                <rect key="frame" x="226.5" y="0.0" width="33.5" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Tym-CD-Hjr"/>
                                                 </constraints>
@@ -81,7 +81,7 @@
                                         </subviews>
                                     </stackView>
                                     <slider opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PlQ-bG-1yF">
-                                        <rect key="frame" x="-2" y="315" width="264" height="31"/>
+                                        <rect key="frame" x="-2" y="322" width="264" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="6eG-V1-v95"/>
                                         </constraints>
@@ -111,7 +111,7 @@
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="dOA-TM-7dO"/>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="60K-Iy-FpO">
                             <connections>
-                                <segue destination="bAF-wq-mot" kind="show" id="mUX-Of-UGT"/>
+                                <segue destination="gaQ-IY-7BZ" kind="show" identifier="settingSegue" id="Q8L-h5-t3F"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -141,22 +141,63 @@
             <point key="canvasLocation" x="5214.375" y="-549.29577464788736"/>
         </scene>
         <!--Settings-->
-        <scene sceneID="wPR-Y2-wGR">
+        <scene sceneID="uau-zF-rpc">
             <objects>
-                <viewController id="bAF-wq-mot" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="c8p-tR-HZd">
+                <tableViewController id="gaQ-IY-7BZ" customClass="SettingsTableViewController" customModule="MusTin" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="fik-Bn-G6k">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="uyC-pQ-5jp"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="never" id="tBA-fd-gjC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="X7x-Yb-wTj"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Genre" id="Te7-lR-viX">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="udP-do-bda">
+                                        <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="udP-do-bda" id="ixp-TZ-bh5">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OSU-lR-Xjm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="OSU-lR-Xjm" secondAttribute="trailing" id="QTf-g9-5KD"/>
+                                                <constraint firstAttribute="bottom" secondItem="OSU-lR-Xjm" secondAttribute="bottom" id="WNm-HK-24Y"/>
+                                                <constraint firstItem="OSU-lR-Xjm" firstAttribute="top" secondItem="ixp-TZ-bh5" secondAttribute="top" id="bFh-i2-tDp"/>
+                                                <constraint firstItem="OSU-lR-Xjm" firstAttribute="centerY" secondItem="ixp-TZ-bh5" secondAttribute="centerY" id="nLY-Qw-xQW"/>
+                                                <constraint firstItem="OSU-lR-Xjm" firstAttribute="leading" secondItem="ixp-TZ-bh5" secondAttribute="leading" id="ugd-1I-Xaq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="gaQ-IY-7BZ" id="49a-Pr-cS0"/>
+                            <outlet property="delegate" destination="gaQ-IY-7BZ" id="BsF-rR-HfM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="never" id="GBH-lM-VpH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Lz8-Un-eYE">
+                            <connections>
+                                <segue destination="ahG-iK-Lgt" kind="unwind" identifier="saveUnwind" unwindAction="unwindToMusicViewWithSegue:" id="SXu-K4-b64"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cr8-Kg-D2w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="genreText" destination="OSU-lR-Xjm" id="b24-iU-pcJ"/>
+                        <outlet property="saveButton" destination="Lz8-Un-eYE" id="oZb-a4-eOG"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L8V-DP-NTQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ahG-iK-Lgt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6204" y="-549"/>
+            <point key="canvasLocation" x="6159" y="-549"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wvB-sB-ha2">
