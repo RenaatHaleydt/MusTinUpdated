@@ -28,12 +28,17 @@ class ArtistModelController {
     
     init() {
         readSongsFromHardDisk()
-        ArtistModelController.unplayedArtists.shuffle()
+        removeDuplicates()
+        //ArtistModelController.unplayedArtists.shuffle()
         ArtistModelController.playedArtists = []
         allArtists = ArtistModelController.unplayedArtists
     }
     
     //---------------------------------------Domain methods------------------------------------------------
+    func removeDuplicates() {
+        ArtistModelController.unplayedArtists = ArtistModelController.unplayedArtists.filter { !ArtistModelController.likedArtists.contains($0) }.filter( { !ArtistModelController.dislikedArtists.contains($0) }).shuffled()
+    }
+    
     
     static func getDistinctGenres() -> [String] {
         return Array(Set(ArtistModelController.unplayedArtists.compactMap({ $0.album.genre })))
@@ -163,7 +168,7 @@ class ArtistModelController {
                 songString = songString.replacingOccurrences(of: "%20", with: " ")
                 songString = songString.replacingOccurrences(of: ".mp3", with: "")
                 str = songString.components(separatedBy: " - ")
-                if(!ArtistModelController.unplayedArtists.contains { $0.name.elementsEqual(str[0]) }) {
+                if(!ArtistModelController.unplayedArtists.contains { $0.name == str[0] }) {
                     artiestenNaam = str[0]
                     albumTitel = str[1]
                     jaar = Int(str[2])

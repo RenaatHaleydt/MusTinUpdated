@@ -19,7 +19,7 @@
 		8373368E21F4EE3A00FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367821F4EE3700FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre1.mp3 */; };
 		8373368F21F4EE3A00FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Holiday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367921F4EE3700FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Holiday.mp3 */; };
 		8373369021F4EE3A00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367A21F4EE3700FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3 */; };
-		8373369121F4EE3A00FF8EB7 /* Swift - Fancy - 2019 - Dance -I Like.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367B21F4EE3700FF8EB7 /* Swift - Fancy - 2019 - Dance -I Like.mp3 */; };
+		8373369121F4EE3A00FF8EB7 /* Swift - Fancy - 2019 - Dance - I Like.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367B21F4EE3700FF8EB7 /* Swift - Fancy - 2019 - Dance - I Like.mp3 */; };
 		8373369221F4EE3A00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367C21F4EE3700FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 */; };
 		8373369321F4EE3A00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367D21F4EE3800FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 */; };
 		8373369421F4EE3A00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8373367E21F4EE3800FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3 */; };
@@ -77,7 +77,7 @@
 		8373367821F4EE3700FF8EB7 /* Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Block Party - Copy Of The Beagles To Test Genre - 2018 - Rock - Copy To Test Genre1.mp3"; sourceTree = "<group>"; };
 		8373367921F4EE3700FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Holiday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Beagles - Second White Album - 2018 - Rock - Holiday.mp3"; sourceTree = "<group>"; };
 		8373367A21F4EE3700FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3"; sourceTree = "<group>"; };
-		8373367B21F4EE3700FF8EB7 /* Swift - Fancy - 2019 - Dance -I Like.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Swift - Fancy - 2019 - Dance -I Like.mp3"; sourceTree = "<group>"; };
+		8373367B21F4EE3700FF8EB7 /* Swift - Fancy - 2019 - Dance - I Like.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Swift - Fancy - 2019 - Dance - I Like.mp3"; sourceTree = "<group>"; };
 		8373367C21F4EE3700FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "De Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3"; sourceTree = "<group>"; };
 		8373367D21F4EE3800FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3"; sourceTree = "<group>"; };
 		8373367E21F4EE3800FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3"; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 				8373368821F4EE3900FF8EB7 /* Summer Here I Come - Copy Of Swift To Test Genre - 2019 - Dance - Copy To Test Genre1.mp3 */,
 				8373367721F4EE3700FF8EB7 /* Summer Here I Come - Copy Of Swift To Test Genre - 2019 - Dance - Copy To Test Genre2.mp3 */,
 				8373368321F4EE3800FF8EB7 /* Swift - Fancy - 2019 - Dance - Is A Cool Language.mp3 */,
-				8373367B21F4EE3700FF8EB7 /* Swift - Fancy - 2019 - Dance -I Like.mp3 */,
+				8373367B21F4EE3700FF8EB7 /* Swift - Fancy - 2019 - Dance - I Like.mp3 */,
 				8373368421F4EE3900FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Hey Dude.mp3 */,
 				8373367921F4EE3700FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Holiday.mp3 */,
 				8373368121F4EE3800FF8EB7 /* The Beagles - Second White Album - 2018 - Rock - Summer Is Comming.mp3 */,
@@ -369,7 +369,7 @@
 				8373369921F4EE3A00FF8EB7 /* Swift - Fancy - 2019 - Dance - Is A Cool Language.mp3 in Resources */,
 				8373369621F4EE3A00FF8EB7 /* Lode - Please Give Me An A - 2019 - Electronic - Cold Outside.mp3 in Resources */,
 				8373369C21F4EE3A00FF8EB7 /* De Sjarels - Demo - 2015 - Alternative Rock - De Brunette.mp3 in Resources */,
-				8373369121F4EE3A00FF8EB7 /* Swift - Fancy - 2019 - Dance -I Like.mp3 in Resources */,
+				8373369121F4EE3A00FF8EB7 /* Swift - Fancy - 2019 - Dance - I Like.mp3 in Resources */,
 				8373369F21F4EE3A00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 in Resources */,
 				8373369421F4EE3A00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Royals.mp3 in Resources */,
 				8373369021F4EE3A00FF8EB7 /* Jerk Beefy - Frog Fest - 2018 - Punk-Rock - Humans.mp3 in Resources */,

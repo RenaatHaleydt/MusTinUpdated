@@ -12,49 +12,35 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    // TODOTODOTODOTODO: Hier moet de data opgehaald worden! Misschien de player opnieuw oproepen?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        ArtistModelController.fetchSavedUnplayedArtistsData()
-        ArtistModelController.fetchSavedPlayedArtistsData()
-        ArtistModelController.fetchSavedLikedArtistsData()
-        ArtistModelController.fetchSavedDislikedArtistsData()
-        
+        ArtistModelController.fetchData()
         SettingsModelController.fetchSavedSettingsData()
         return true
     }
 
-    // TODOTODOTODOTODO: Hier moet de code komen om de AVAudioPlayer op pauze te zetten. Want hier zal de user de app naar de inactive state brengen
     func applicationWillResignActive(_ application: UIApplication) {
-        
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
 
-    // Hier moet niets gebeuren, aangezien de app niet in de background moet draaien
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 
-        ArtistModelController.saveUnplayedArtistsData()
-        ArtistModelController.savePlayedArtistsData()
-        ArtistModelController.saveLikedArtistsData()
-        ArtistModelController.saveDislikedArtistsData()
-        
+        ArtistModelController.saveData()
         SettingsModelController.saveSettingsData()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
-
-    // TODOTODOTODOTODO: Hier moet de player terug op play gezet worden!
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    // TODOTODOTODOTODO: Hier moet de data gesaved worden en de player stop gezet worden!
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         

@@ -39,8 +39,8 @@ class MusicViewController: UIViewController {
         }
         
         audioPlayer = AVAudioPlayer()
-        showNextArtistForFirstTime()
-        //showNextArtist()
+        //showNextArtistForFirstTime()
+        showNextArtist()
         initializeAudioPlayer()
         super.viewDidLoad()
     }
@@ -98,6 +98,7 @@ class MusicViewController: UIViewController {
                 guard ArtistModelController.unplayedArtists.count > 0 else {
                     showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists!")
                     audioPlayer!.stop()
+                    checkPlayOrPause()
                     return
                 }
                 likeArtist(art: currentArtist!)
@@ -114,6 +115,7 @@ class MusicViewController: UIViewController {
                 guard ArtistModelController.unplayedArtists.count > 0 else {
                     showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists!")
                     audioPlayer!.stop()
+                    checkPlayOrPause()
                     return
                 }
                 dislikeArtist(art: currentArtist!)
@@ -210,7 +212,7 @@ class MusicViewController: UIViewController {
             if firstTime == true { // De lijst van unplayedArtists is in het begin leeg, je wil niet dat hij dan de Alert geeft
                 return
             } else {
-                showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists!")
+                showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists! \nYou have to reset your settings!")
                 //audioPlayer!.stop()
                 return
             }
@@ -231,6 +233,9 @@ class MusicViewController: UIViewController {
     }
     
     func likeArtist(art: Artist) {
+        if ArtistModelController.likedArtists.contains(art) {
+          return
+        }
         ArtistModelController.likedArtists.append(art)
     }
     
@@ -258,7 +263,7 @@ class MusicViewController: UIViewController {
     }
     
     func moveUnPlayedArtistToPlayed(art: Artist) {
-        ArtistModelController.playedArtists.append(ArtistModelController.unplayedArtists.remove(at: ArtistModelController.unplayedArtists.firstIndex{ $0.name == art.name }!))
+        ArtistModelController.playedArtists.append(ArtistModelController.unplayedArtists.remove(at: ArtistModelController.unplayedArtists.firstIndex{ $0 == art }!))
     }
 }
 
