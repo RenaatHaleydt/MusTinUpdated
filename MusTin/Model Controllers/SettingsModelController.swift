@@ -9,10 +9,10 @@
 import Foundation
 
 class SettingsModelController {
-    static var settings: Settings? = nil
+    static var settings: Settings?
     
     init() {
-        SettingsModelController.settings = Settings(gen: "rock")
+        SettingsModelController.settings = Settings(gen: "Not Set")
     }
     
     static func saveSettingsData() {

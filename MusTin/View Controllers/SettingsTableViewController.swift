@@ -8,31 +8,59 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController, SelectGenreTableViewControllerDelegate {
+    
     var settings: Settings?
+    var genre: String?
     
+    @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
-    @IBOutlet weak var genreText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        settings = SettingsModelController.settings
+        
         updateGUI()
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        updateGUI()
+//    }
+    
     func updateGUI() {
-        settings = SettingsModelController.settings
-        genreText.text = settings?.genre
+        SettingsModelController.fetchSavedSettingsData()
+        updateGenre()
+    }
+    
+    func updateGenre() {
+        if let genre = SettingsModelController.settings?.genre {
+            genreLabel.text = genre
+        } else {
+            genreLabel.text = "Not Set"
+        }
+    }
+    
+    func didSelect(genre: String) {
+        SettingsModelController.settings?.genre = genre
+        updateGenre()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
         super.prepare(for: segue, sender: sender)
         
-        guard segue.identifier == "saveUnwind" else { return }
+        if segue.identifier == "saveUnwind" {
+            SettingsModelController.saveSettingsData()
+        } else {
+            if segue.identifier == "SelectGenre" {
+                let destinationViewController = segue.destination as? SelectGenreTableViewController
+                destinationViewController?.delegate = self
+                destinationViewController?.genre = genre
+            } else {
+                return
+            }
+        }
         
-        SettingsModelController.settings = Settings(gen: genreText.text!)
-        SettingsModelController.saveSettingsData()
     }
 
 }

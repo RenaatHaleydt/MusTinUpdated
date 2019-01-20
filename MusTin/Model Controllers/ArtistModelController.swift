@@ -9,7 +9,13 @@
 import Foundation
 
 class ArtistModelController {
+    var allArtists: [Artist] = []
     static var unplayedArtists: [Artist] = []
+    {
+        didSet {
+            NotificationCenter.default.post(name: ArtistModelController.unplayedArtistsNotification, object: nil)
+        }
+    }
     static var playedArtists: [Artist] = []
     static var likedArtists: [Artist] = [] {
         didSet {
@@ -18,10 +24,41 @@ class ArtistModelController {
     }
     static var dislikedArtists: [Artist] = []
     static let likedArtistsNotification = Notification.Name("ArtistModelController.likedArtistsUpdated")
+    static let unplayedArtistsNotification = Notification.Name("ArtistModelController.unplayedArtistsUpdated")
     
     init() {
         readSongsFromHardDisk()
+        ArtistModelController.playedArtists = []
+        allArtists = ArtistModelController.unplayedArtists
     }
+    
+    //---------------------------------------Domain methods------------------------------------------------
+    
+    static func getDistinctGenres() -> [String] {
+        return Array(Set(ArtistModelController.unplayedArtists.compactMap({ $0.album.genre })))
+    }
+    
+    static func importSettings() {
+        let art = ArtistModelController.unplayedArtists
+        let sett = SettingsModelController.settings
+        ArtistModelController.unplayedArtists = art.filter({ $0.album.genre == sett!.genre })
+    }
+    
+    //---------------------------------------Data methods--------------------------------------------------
+    static func saveData() {
+        ArtistModelController.saveUnplayedArtistsData()
+        ArtistModelController.savePlayedArtistsData()
+        ArtistModelController.saveLikedArtistsData()
+        ArtistModelController.saveDislikedArtistsData()
+    }
+    
+    static func fetchData() {
+        ArtistModelController.fetchSavedUnplayedArtistsData()
+        ArtistModelController.fetchSavedPlayedArtistsData()
+        ArtistModelController.fetchSavedLikedArtistsData()
+        ArtistModelController.fetchSavedDislikedArtistsData()
+    }
+    
     
     static func saveUnplayedArtistsData() {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -102,6 +139,8 @@ class ArtistModelController {
             ArtistModelController.dislikedArtists = decodedDislikedArtists
         }
     }
+    
+    //---------------------------------------Read songs--------------------------------------------------
     
     func readSongsFromHardDisk() {
         var artiest: Artist?

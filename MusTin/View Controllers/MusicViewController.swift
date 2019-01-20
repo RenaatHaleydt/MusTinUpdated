@@ -38,6 +38,8 @@ class MusicViewController: UIViewController {
             _ = SettingsModelController()
         }
         
+//        NotificationCenter.default.addObserver(self, selector: #selector(unplayedArtistsHasChange), name: ArtistModelController.unplayedArtistsNotification, object: nil)
+        
         audioPlayer = AVAudioPlayer()
         print("Lijst met unPlayed in het begin!")
         for ar in ArtistModelController.unplayedArtists {
@@ -142,6 +144,9 @@ class MusicViewController: UIViewController {
     }
     
     //-----------------------------------domain methods----------------------------------------------
+    @objc func unplayedArtistsHasChange() {
+        showNextArtist()
+    }
     
     func initializeAudioPlayer() {
         let currentSongURL = Bundle.main.url(forResource: self.giveNameOfFile(artiest: currentArtist!, song: currentSong!), withExtension: currentSong!.xtension)
@@ -172,19 +177,20 @@ class MusicViewController: UIViewController {
     }
     
     func showNextArtist() {
-        for ar in ArtistModelController.unplayedArtists {
-            print("Bij begin van methode \(ar.name)")
-        }
-        if ArtistModelController.unplayedArtists.isEmpty {
-            showAlert(title: "No artists", message: "There are no more artists!")
-            audioPlayer!.stop()
-            for ar in ArtistModelController.unplayedArtists {
-                print("blablablablabla \(ar.name)")
-            }
-            return
-        }
+//        for ar in ArtistModelController.unplayedArtists {
+//            print("Bij begin van methode \(ar.name)")
+//        }
+//        if ArtistModelController.unplayedArtists.isEmpty {
+//            showAlert(title: "No artists", message: "There are no more artists!")
+//            audioPlayer!.stop()
+//            for ar in ArtistModelController.unplayedArtists {
+//                print("blablablablabla \(ar.name)")
+//            }
+//            return
+//        }
         guard let ca = ArtistModelController.unplayedArtists.randomElement() else {
             showAlert(title: "No artists", message: "There are no more artists!")
+            //audioPlayer!.stop()
             return
         }
         currentArtist = ca

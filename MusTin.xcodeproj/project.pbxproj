@@ -14,16 +14,17 @@
 		8373365421F4741500FF8EB7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373365321F4741500FF8EB7 /* Settings.swift */; };
 		8373365621F475A800FF8EB7 /* SettingsModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373365521F475A800FF8EB7 /* SettingsModelController.swift */; };
 		8373365821F477D800FF8EB7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373365721F477D800FF8EB7 /* SettingsTableViewController.swift */; };
+		8373365A21F4A61000FF8EB7 /* SelectGenreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373365921F4A61000FF8EB7 /* SelectGenreTableViewController.swift */; };
 		83A07DF021CFEAB500B9B98C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A07DEF21CFEAB500B9B98C /* AppDelegate.swift */; };
 		83A07DF221CFEAB500B9B98C /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A07DF121CFEAB500B9B98C /* MusicViewController.swift */; };
 		83A07DF521CFEAB500B9B98C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A07DF321CFEAB500B9B98C /* Main.storyboard */; };
 		83A07DF721CFEAB600B9B98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83A07DF621CFEAB600B9B98C /* Assets.xcassets */; };
 		83A07DFA21CFEAB600B9B98C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A07DF821CFEAB600B9B98C /* LaunchScreen.storyboard */; };
-		83D03B2521F1FD4E00EE2B24 /* Who Is Jef - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83D03B1F21F1FD4E00EE2B24 /* Who Is Jef - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 */; };
+		83D03B2521F1FD4E00EE2B24 /* Who Is Jef - Frog Fest - 2018 - Electronica - Disco Pogo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83D03B1F21F1FD4E00EE2B24 /* Who Is Jef - Frog Fest - 2018 - Electronica - Disco Pogo.mp3 */; };
 		83D03B2621F1FD4E00EE2B24 /* Jef - Frog Fest - 2018 - Punk-Rock - Royals.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83D03B2021F1FD4E00EE2B24 /* Jef - Frog Fest - 2018 - Punk-Rock - Royals.mp3 */; };
 		83D03B2721F1FD4E00EE2B24 /* De Sjarel - Demo - 2015 - Alternative Rock - De Brunette.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83D03B2121F1FD4E00EE2B24 /* De Sjarel - Demo - 2015 - Alternative Rock - De Brunette.mp3 */; };
 		83D03B2821F1FD4E00EE2B24 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83D03B2221F1FD4E00EE2B24 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 */; };
-		83D03B2921F1FD4E00EE2B24 /* Who - Frog Fest - 2018 - Punk-Rock - Humans.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83D03B2321F1FD4E00EE2B24 /* Who - Frog Fest - 2018 - Punk-Rock - Humans.mp3 */; };
+		83D03B2921F1FD4E00EE2B24 /* Who - Frog Fest - 2018 - Dance - Humans.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83D03B2321F1FD4E00EE2B24 /* Who - Frog Fest - 2018 - Dance - Humans.mp3 */; };
 		83D03B2A21F1FD4E00EE2B24 /* Boer Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83D03B2421F1FD4E00EE2B24 /* Boer Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 */; };
 		83EBA63A21CFF7E60022D9DC /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EBA63921CFF7E60022D9DC /* Artist.swift */; };
 		83EBA63C21CFF83A0022D9DC /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EBA63B21CFF83A0022D9DC /* Song.swift */; };
@@ -55,6 +56,7 @@
 		8373365321F4741500FF8EB7 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8373365521F475A800FF8EB7 /* SettingsModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelController.swift; sourceTree = "<group>"; };
 		8373365721F477D800FF8EB7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		8373365921F4A61000FF8EB7 /* SelectGenreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreTableViewController.swift; sourceTree = "<group>"; };
 		83A07DEC21CFEAB500B9B98C /* MusTin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusTin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A07DEF21CFEAB500B9B98C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83A07DF121CFEAB500B9B98C /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
@@ -64,11 +66,11 @@
 		83A07DFB21CFEAB600B9B98C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83A07E0021CFEAB600B9B98C /* MusTinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusTinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A07E0B21CFEAB600B9B98C /* MusTinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusTinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		83D03B1F21F1FD4E00EE2B24 /* Who Is Jef - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Who Is Jef - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3"; sourceTree = "<group>"; };
+		83D03B1F21F1FD4E00EE2B24 /* Who Is Jef - Frog Fest - 2018 - Electronica - Disco Pogo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Who Is Jef - Frog Fest - 2018 - Electronica - Disco Pogo.mp3"; sourceTree = "<group>"; };
 		83D03B2021F1FD4E00EE2B24 /* Jef - Frog Fest - 2018 - Punk-Rock - Royals.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Jef - Frog Fest - 2018 - Punk-Rock - Royals.mp3"; sourceTree = "<group>"; };
 		83D03B2121F1FD4E00EE2B24 /* De Sjarel - Demo - 2015 - Alternative Rock - De Brunette.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "De Sjarel - Demo - 2015 - Alternative Rock - De Brunette.mp3"; sourceTree = "<group>"; };
 		83D03B2221F1FD4E00EE2B24 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3"; sourceTree = "<group>"; };
-		83D03B2321F1FD4E00EE2B24 /* Who - Frog Fest - 2018 - Punk-Rock - Humans.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Who - Frog Fest - 2018 - Punk-Rock - Humans.mp3"; sourceTree = "<group>"; };
+		83D03B2321F1FD4E00EE2B24 /* Who - Frog Fest - 2018 - Dance - Humans.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Who - Frog Fest - 2018 - Dance - Humans.mp3"; sourceTree = "<group>"; };
 		83D03B2421F1FD4E00EE2B24 /* Boer Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Boer Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3"; sourceTree = "<group>"; };
 		83EBA63921CFF7E60022D9DC /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		83EBA63B21CFF83A0022D9DC /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
@@ -165,11 +167,11 @@
 		83D03B1E21F1FD4E00EE2B24 /* Artists */ = {
 			isa = PBXGroup;
 			children = (
-				83D03B1F21F1FD4E00EE2B24 /* Who Is Jef - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 */,
+				83D03B1F21F1FD4E00EE2B24 /* Who Is Jef - Frog Fest - 2018 - Electronica - Disco Pogo.mp3 */,
 				83D03B2021F1FD4E00EE2B24 /* Jef - Frog Fest - 2018 - Punk-Rock - Royals.mp3 */,
 				83D03B2121F1FD4E00EE2B24 /* De Sjarel - Demo - 2015 - Alternative Rock - De Brunette.mp3 */,
 				83D03B2221F1FD4E00EE2B24 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 */,
-				83D03B2321F1FD4E00EE2B24 /* Who - Frog Fest - 2018 - Punk-Rock - Humans.mp3 */,
+				83D03B2321F1FD4E00EE2B24 /* Who - Frog Fest - 2018 - Dance - Humans.mp3 */,
 				83D03B2421F1FD4E00EE2B24 /* Boer Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 */,
 			);
 			path = Artists;
@@ -200,6 +202,7 @@
 				831A494E21F35CC000A5D0D8 /* LikedListTableViewController.swift */,
 				83A07DF121CFEAB500B9B98C /* MusicViewController.swift */,
 				8373365721F477D800FF8EB7 /* SettingsTableViewController.swift */,
+				8373365921F4A61000FF8EB7 /* SelectGenreTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -316,14 +319,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				83D03B2A21F1FD4E00EE2B24 /* Boer Sjarels - Demo - 2015 - Alternative Rock - De Blonde.mp3 in Resources */,
-				83D03B2921F1FD4E00EE2B24 /* Who - Frog Fest - 2018 - Punk-Rock - Humans.mp3 in Resources */,
+				83D03B2921F1FD4E00EE2B24 /* Who - Frog Fest - 2018 - Dance - Humans.mp3 in Resources */,
 				83D03B2621F1FD4E00EE2B24 /* Jef - Frog Fest - 2018 - Punk-Rock - Royals.mp3 in Resources */,
 				83D03B2721F1FD4E00EE2B24 /* De Sjarel - Demo - 2015 - Alternative Rock - De Brunette.mp3 in Resources */,
 				83A07DFA21CFEAB600B9B98C /* LaunchScreen.storyboard in Resources */,
 				83A07DF721CFEAB600B9B98C /* Assets.xcassets in Resources */,
 				83D03B2821F1FD4E00EE2B24 /* De Sjarels - Demo - 2015 - Alternative Rock - De Rosse.mp3 in Resources */,
 				83A07DF521CFEAB500B9B98C /* Main.storyboard in Resources */,
-				83D03B2521F1FD4E00EE2B24 /* Who Is Jef - Frog Fest - 2018 - Punk-Rock - Disco Pogo.mp3 in Resources */,
+				83D03B2521F1FD4E00EE2B24 /* Who Is Jef - Frog Fest - 2018 - Electronica - Disco Pogo.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +361,7 @@
 				83A07DF221CFEAB500B9B98C /* MusicViewController.swift in Sources */,
 				8373365821F477D800FF8EB7 /* SettingsTableViewController.swift in Sources */,
 				83A07DF021CFEAB500B9B98C /* AppDelegate.swift in Sources */,
+				8373365A21F4A61000FF8EB7 /* SelectGenreTableViewController.swift in Sources */,
 				83EBA63E21CFF8550022D9DC /* Album.swift in Sources */,
 				8373364F21F3ABD300FF8EB7 /* User.swift in Sources */,
 			);
