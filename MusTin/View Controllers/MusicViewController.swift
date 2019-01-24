@@ -238,6 +238,7 @@ class MusicViewController: UIViewController {
         MusicViewController.firstTime = false
     }
     
+    // De DispatchQueue heb ik van StackOverflow gehaald: https://stackoverflow.com/questions/27517632/how-to-create-a-delay-in-swift
     func showNextArtist() {
         guard let ca = ArtistModelController.unplayedArtists.first else {
             if MusicViewController.firstTime == true { // De lijst van unplayedArtists is in het begin leeg, je wil niet dat hij dan de Alert geeft
