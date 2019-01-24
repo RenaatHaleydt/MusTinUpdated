@@ -18,7 +18,7 @@ class SettingsTableViewController: UITableViewController, SelectGenreTableViewCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        audioPlayer?.stop()
+        //audioPlayer?.stop()
         settings = SettingsModelController.settings
         updateGUI()
     }
@@ -55,7 +55,7 @@ class SettingsTableViewController: UITableViewController, SelectGenreTableViewCo
                 destinationViewController?.genre = genre
             } else {
                 if segue.identifier == "ResetUnwind" {
-                    showAlertWithConfirmation(title: "No artists", message: "Are you sure you want to reset your data?\nIf you click on Start over, everything will be lost!")
+                    showAlertWithConfirmation(title: "Reset your app", message: "Are you sure you want to reset your data?\nIf you click on Reset, everything will be lost!")
                 } else {
                     return
                 }
@@ -68,7 +68,7 @@ class SettingsTableViewController: UITableViewController, SelectGenreTableViewCo
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let confirmAction = UIAlertAction(title: "Start over", style: .destructive, handler: {
+        let confirmAction = UIAlertAction(title: "Reset", style: .destructive, handler: {
             action in
                 ArtistModelController.clearData()
                 SettingsModelController.saveSettingsData()

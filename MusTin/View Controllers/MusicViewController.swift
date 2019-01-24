@@ -18,7 +18,7 @@ class MusicViewController: UIViewController {
     var currentSong: Song?
     static var firstTime = true // Is nodig om de player niet te laten beginnen als het scherm geladen is, maar wel wanneer er voor de eerste keer op de playButton gedrukt is.
     var tellerSongs = 0 // Wordt gebruikt om de teller bij te houden welke song er aan het spelen is
-    
+    let likeSeconds = 0.7
     
     //---------------------------------------IBOutlets-----------------------------------------------
     
@@ -48,6 +48,10 @@ class MusicViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         audioPlayer = AVAudioPlayer()
+        if ArtistModelController.unplayedArtists.count == 0 {
+            showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists to show!\nGo to Settings and change your genre or reset your app end start over.")
+            return
+        }
         showNextArtist()
         initializeAudioPlayer(artist: currentArtist!, song: currentSong!)
     }
@@ -98,13 +102,14 @@ class MusicViewController: UIViewController {
             if !ArtistModelController.likedArtists.contains(self.currentArtist!) && !ArtistModelController.dislikedArtists.contains(self.currentArtist!) {
                 likeArtist(art: currentArtist!)
             }
-            showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists to show!\nGo to Settings and change your genre or reset your app end start over.")
             audioPlayer!.stop()
             checkPlayOrPause()
+            showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists to show!\nGo to Settings and change your genre or reset your app end start over.")
+            
             return
         }
         likeArtist(art: currentArtist!)
-        showAlert(title: "Liked", message: "You liked \n\(currentArtist!.name)!", time: 0.7)
+        showAlert(title: "Liked", message: "You liked \n\(currentArtist!.name)!", time: self.likeSeconds)
         showNextArtist()
         playSong(artist: currentArtist!, song: currentSong!)
     }
@@ -116,13 +121,14 @@ class MusicViewController: UIViewController {
                     if !ArtistModelController.likedArtists.contains(self.currentArtist!) && !ArtistModelController.dislikedArtists.contains(self.currentArtist!) {
                         likeArtist(art: currentArtist!)
                     }
-                    showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists to show!\nGo to Settings and change your genre or reset your app end start over.")
                     audioPlayer!.stop()
                     checkPlayOrPause()
+                    showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists to show!\nGo to Settings and change your genre or reset your app end start over.")
+                    
                     return
                 }
                 likeArtist(art: currentArtist!)
-                showAlert(title: "Liked", message: "You liked \n\(currentArtist!.name)!", time: 0.7)
+                showAlert(title: "Liked", message: "You liked \n\(currentArtist!.name)!", time: self.likeSeconds)
                 showNextArtist()
                 playSong(artist: currentArtist!, song: currentSong!)
             }
@@ -134,13 +140,14 @@ class MusicViewController: UIViewController {
             if !ArtistModelController.likedArtists.contains(self.currentArtist!) && !ArtistModelController.dislikedArtists.contains(self.currentArtist!) {
                 dislikeArtist(art: currentArtist!)
             }
-            showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists to show!\nGo to Settings and change your genre or reset your app end start over.")
             audioPlayer!.stop()
             checkPlayOrPause()
+            showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists to show!\nGo to Settings and change your genre or reset your app end start over.")
+            
             return
         }
         dislikeArtist(art: currentArtist!)
-        showAlert(title: "Not liked", message: "You didn't like \n\(currentArtist!.name)!", time: 0.7)
+        showAlert(title: "Not liked", message: "You didn't like \n\(currentArtist!.name)!", time: self.likeSeconds)
         showNextArtist()
         playSong(artist: currentArtist!, song: currentSong!)
     }
@@ -160,7 +167,7 @@ class MusicViewController: UIViewController {
                     return
                 }
                 dislikeArtist(art: currentArtist!)
-                showAlert(title: "Not liked", message: "You didn't like \n\(currentArtist!.name)!", time: 0.7)
+                showAlert(title: "Not liked", message: "You didn't like \n\(currentArtist!.name)!", time: self.likeSeconds)
                 showNextArtist()
                 playSong(artist: currentArtist!, song: currentSong!)
             }
@@ -190,7 +197,7 @@ class MusicViewController: UIViewController {
     }
     
     func showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: String, message: String) {
-        audioPlayer?.stop()
+        //audioPlayer?.stop()
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -236,7 +243,11 @@ class MusicViewController: UIViewController {
             if MusicViewController.firstTime == true { // De lijst van unplayedArtists is in het begin leeg, je wil niet dat hij dan de Alert geeft
                 return
             } else {
-                showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists to show!\nGo to Settings and change your genre or reset your app end start over.")
+                audioPlayer?.stop()
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                    self.showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists to show!\nGo to Settings and change your genre or reset your app end start over.")
+                })
+//                showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists to show!\nGo to Settings and change your genre or reset your app end start over.")
                 return
             }
         }
@@ -252,6 +263,7 @@ class MusicViewController: UIViewController {
     }
     
     func dislikeArtist(art: Artist) {
+        MusicViewController.firstTime = false
         ArtistModelController.moveUnPlayedArtistToPlayed(art: currentArtist!)
         if ArtistModelController.dislikedArtists.contains(art) {
             return
@@ -260,6 +272,7 @@ class MusicViewController: UIViewController {
     }
     
     func likeArtist(art: Artist) {
+        MusicViewController.firstTime = false
         ArtistModelController.moveUnPlayedArtistToPlayed(art: currentArtist!)
         if ArtistModelController.likedArtists.contains(art) {
           return
