@@ -205,6 +205,32 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Reset" id="HtB-MT-EQM">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rxN-Pd-o0i">
+                                        <rect key="frame" x="0.0" y="155.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rxN-Pd-o0i" id="J72-pN-LYq">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dkb-zP-KZR">
+                                                    <rect key="frame" x="108.5" y="7" width="103" height="30"/>
+                                                    <state key="normal" title="Reset your app"/>
+                                                    <connections>
+                                                        <action selector="resetApp:" destination="gaQ-IY-7BZ" eventType="touchUpInside" id="kdp-Dv-jKy"/>
+                                                        <segue destination="ahG-iK-Lgt" kind="unwind" identifier="ResetUnwind" unwindAction="unwindToMusicViewWithSegue:" id="AZv-zG-B6O"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Dkb-zP-KZR" firstAttribute="centerY" secondItem="J72-pN-LYq" secondAttribute="centerY" id="lpX-6h-Uw0"/>
+                                                <constraint firstItem="Dkb-zP-KZR" firstAttribute="centerX" secondItem="J72-pN-LYq" secondAttribute="centerX" id="zJf-UV-oeU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="gaQ-IY-7BZ" id="49a-Pr-cS0"/>

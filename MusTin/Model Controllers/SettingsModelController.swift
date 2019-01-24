@@ -12,7 +12,7 @@ class SettingsModelController {
     static var settings: Settings?
     
     init() {
-        SettingsModelController.settings = Settings(gen: "Not Set")
+        SettingsModelController.settings = Settings(gen: "All")
     }
     
     static func saveSettingsData() {

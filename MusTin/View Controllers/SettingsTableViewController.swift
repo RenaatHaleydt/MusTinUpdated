@@ -24,6 +24,11 @@ class SettingsTableViewController: UITableViewController, SelectGenreTableViewCo
         updateGUI()
     }
     
+    
+    @IBAction func resetApp(_ sender: UIButton) {
+        //self.dismiss(animated: true, completion: nil)
+    }
+    
     func updateGUI() {
         SettingsModelController.fetchSavedSettingsData()
         updateGenre()
@@ -33,7 +38,7 @@ class SettingsTableViewController: UITableViewController, SelectGenreTableViewCo
         if let genre = SettingsModelController.settings?.genre {
             genreLabel.text = genre
         } else {
-            genreLabel.text = "Not Set"
+            genreLabel.text = "All"
         }
     }
     
@@ -48,13 +53,23 @@ class SettingsTableViewController: UITableViewController, SelectGenreTableViewCo
         if segue.identifier == "saveUnwind" {
             SettingsModelController.saveSettingsData()
             ArtistModelController.importSettings()
+            MusicViewController.firstTime = true
         } else {
             if segue.identifier == "SelectGenre" {
                 let destinationViewController = segue.destination as? SelectGenreTableViewController
                 destinationViewController?.delegate = self
                 destinationViewController?.genre = genre
             } else {
-                return
+                if segue.identifier == "ResetUnwind" {
+                    _ = SettingsModelController.init()
+                    ArtistModelController.clearData()
+                    _ = ArtistModelController.init()
+                    
+                    MusicViewController.firstTime = true
+                    
+                } else {
+                    return
+                }
             }
         }
         

@@ -28,36 +28,40 @@ class ArtistModelController {
     
     init() {
         readSongsFromHardDisk()
-        removeDuplicates()
-        //ArtistModelController.unplayedArtists.shuffle()
-        ArtistModelController.playedArtists = []
-        ArtistModelController.allArtists = ArtistModelController.unplayedArtists
+        ArtistModelController.unplayedArtists = ArtistModelController.allArtists.shuffled()
     }
     
     //---------------------------------------Domain methods------------------------------------------------
-    func removeDuplicates() {
-        ArtistModelController.unplayedArtists = ArtistModelController.unplayedArtists.filter { !ArtistModelController.likedArtists.contains($0)}.shuffled()
-    }
-    
-    
     static func getDistinctGenres() -> [String] {
-        return Array(Set(ArtistModelController.unplayedArtists.compactMap({ $0.album.genre })))
+        var genres = Array(Set(ArtistModelController.allArtists.filter({ !ArtistModelController.playedArtists.contains($0)}).compactMap({ $0.album.genre })))
+        genres.append("All")
+        genres = genres.sorted(by: <)
+        return genres
     }
     
     static func importSettings() {
         //_ = SettingsModelController.init()
-        let art = ArtistModelController.unplayedArtists
+        let art = ArtistModelController.allArtists.filter( { !ArtistModelController.playedArtists.contains($0) } )
         let sett = SettingsModelController.settings
-        print(sett!.genre)
-
-        ArtistModelController.unplayedArtists = art.filter({ $0.album.genre == sett!.genre })
-        for a in ArtistModelController.unplayedArtists {
-            print(a.name)
+        
+        guard sett?.genre != "All" else {
+            ArtistModelController.unplayedArtists = art.shuffled()
+            return
         }
+        ArtistModelController.unplayedArtists = art.filter({ $0.album.genre == sett!.genre }).shuffled()
+        
+    }
+    
+    static func clearData() {
+        ArtistModelController.unplayedArtists = []
+        ArtistModelController.playedArtists = []
+        ArtistModelController.dislikedArtists = []
+        ArtistModelController.likedArtists = []
     }
     
     //---------------------------------------Data methods--------------------------------------------------
     static func saveData() {
+        ArtistModelController.saveAllArtistsData()
         ArtistModelController.saveUnplayedArtistsData()
         ArtistModelController.savePlayedArtistsData()
         ArtistModelController.saveLikedArtistsData()
@@ -65,6 +69,7 @@ class ArtistModelController {
     }
     
     static func fetchData() {
+        ArtistModelController.fetchSavedAllArtistsData()
         ArtistModelController.fetchSavedUnplayedArtistsData()
         ArtistModelController.fetchSavedPlayedArtistsData()
         ArtistModelController.fetchSavedLikedArtistsData()
@@ -72,7 +77,28 @@ class ArtistModelController {
     }
     
     
+    static func saveAllArtistsData() {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL =  documentsDirectory.appendingPathComponent("allArtists").appendingPathExtension("plist")
+        
+        let propertyListEncoder = PropertyListEncoder()
+        let encodedAllArtists = try? propertyListEncoder.encode(ArtistModelController.allArtists)
+        
+        try? encodedAllArtists?.write(to: archiveURL, options: .noFileProtection)// .noFileProtection is om de documents later te kunnen wijzigen
+    }
+    
+    static func fetchSavedAllArtistsData() {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL =  documentsDirectory.appendingPathComponent("allArtists").appendingPathExtension("plist")
+        
+        let propertyListDecoder = PropertyListDecoder()
+        if let fetchedAllArtists = try? Data(contentsOf: archiveURL), let decodedAllArtists = try? propertyListDecoder.decode(Array<Artist>.self, from: fetchedAllArtists) {
+            ArtistModelController.allArtists = decodedAllArtists
+        }
+    }
+    
     static func saveUnplayedArtistsData() {
+        ArtistModelController.unplayedArtists = ArtistModelController.allArtists.filter({!ArtistModelController.playedArtists.contains($0)})
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let archiveURL =  documentsDirectory.appendingPathComponent("unplayedArtists").appendingPathExtension("plist")
 
@@ -174,7 +200,7 @@ class ArtistModelController {
                 songString = songString.replacingOccurrences(of: "%20", with: " ")
                 songString = songString.replacingOccurrences(of: ".mp3", with: "")
                 str = songString.components(separatedBy: " - ")
-                if(!ArtistModelController.unplayedArtists.contains { $0.name == str[0] }) {
+                if(!ArtistModelController.allArtists.contains { $0.name == str[0] }) {
                     artiestenNaam = str[0]
                     albumTitel = str[1]
                     jaar = Int(str[2])
@@ -182,9 +208,12 @@ class ArtistModelController {
                     songTitel = str[str.count-1]
                     
                     artiest = Artist(naam: artiestenNaam, al: Album(naam: albumTitel, foto: "", liedjes: [Song(titel: songTitel, type: ".mp3")], jaar: jaar!, gen: gen))
-                    ArtistModelController.unplayedArtists.append(artiest!)
+                    ArtistModelController.allArtists.append(artiest!)
                 } else {
-                    ArtistModelController.unplayedArtists.filter{$0.name == str[0]}.first!.album.songs.append(Song(titel: str[str.count-1], type: ".mp3"))
+                    let artist1 = ArtistModelController.allArtists.filter{$0.name == str[0]}.first!
+                    if (!artist1.album.songs.contains { $0.title == str[str.count-1] }) {
+                        ArtistModelController.allArtists.filter{$0.name == str[0]}.first!.album.songs.append(Song(titel: str[str.count-1], type: ".mp3"))
+                    }
                 }
             }
         }

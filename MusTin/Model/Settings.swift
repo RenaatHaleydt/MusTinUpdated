@@ -9,6 +9,7 @@
 import Foundation
 
 class Settings: Codable {
+    
     var genre: String
     
     init(gen: String) {
