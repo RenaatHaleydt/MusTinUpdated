@@ -39,66 +39,17 @@ class MusicViewController: UIViewController {
         }
         
         audioPlayer = AVAudioPlayer()
-        //showNextArtistForFirstTime()
         showNextArtist()
-        initializeAudioPlayer()
+        initializeAudioPlayer(artist: currentArtist!, song: currentSong!)
         
-        print("\n\n\n\nIn viewDidLoad")
-        print("All Artists: ")
-        for ar in ArtistModelController.allArtists {
-            print(ar.name)
-        }
-        print("\n\nUnplayed Artists: ")
-        for ar in ArtistModelController.unplayedArtists {
-            print(ar.name)
-        }
-        print("\n\nPlayed Artists: ")
-        for ar in ArtistModelController.playedArtists {
-            print(ar.name)
-        }
-        print("\n\nDisliked Artists: ")
-        for ar in ArtistModelController.dislikedArtists {
-            print(ar.name)
-        }
-        print("\n\nLiked Artists: ")
-        for ar in ArtistModelController.likedArtists {
-            print(ar.name)
-        }
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if MusicViewController.firstTime == true {
-            audioPlayer = AVAudioPlayer()
-            //showNextArtistForFirstTime()
-            showNextArtist()
-            initializeAudioPlayer()
-        } else {
-            showNextArtist()
-        }
-        
-        print("\n\n\n\nIn viewWillAppear")
-        print("All Artists: ")
-        for ar in ArtistModelController.allArtists {
-            print(ar.name)
-        }
-        print("\n\nUnplayed Artists: ")
-        for ar in ArtistModelController.unplayedArtists {
-            print(ar.name)
-        }
-        print("\n\nPlayed Artists: ")
-        for ar in ArtistModelController.playedArtists {
-            print(ar.name)
-        }
-        print("\n\nDisliked Artists: ")
-        for ar in ArtistModelController.dislikedArtists {
-            print(ar.name)
-        }
-        print("\n\nLiked Artists: ")
-        for ar in ArtistModelController.likedArtists {
-            print(ar.name)
-        }
+        audioPlayer = AVAudioPlayer()
+        showNextArtist()
+        initializeAudioPlayer(artist: currentArtist!, song: currentSong!)
     }
 
     //-------------------------------------IBActions-------------------------------------------------
@@ -116,7 +67,6 @@ class MusicViewController: UIViewController {
     @IBAction func playButtonPressed(_ sender: UIButton) {
         if MusicViewController.firstTime == true { // Is nodig om de player niet te laten beginnen als het scherm geladen is, maar wel wanneer er voor de eerste keer op de playButton gedrukt is.
             playSong(artist: currentArtist!, song: currentSong!)
-            //MusicViewController.firstTime = false
             return
         }
         
@@ -240,16 +190,13 @@ class MusicViewController: UIViewController {
     }
     
     func showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: String, message: String) {
+        audioPlayer?.stop()
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let confirmAction = UIAlertAction(title: "Start over", style: .default, handler: {
+        let confirmAction = UIAlertAction(title: "Start over", style: .destructive, handler: {
             action in
-                _ = SettingsModelController.init()
                 ArtistModelController.clearData()
-                _ = ArtistModelController.init()
-                
-                MusicViewController.firstTime = true
             
         })
         
@@ -263,31 +210,25 @@ class MusicViewController: UIViewController {
     }
     
     //-----------------------------------domain methods----------------------------------------------
-    func initializeAudioPlayer() {
-        let currentSongURL = Bundle.main.url(forResource: self.giveNameOfFile(artiest: currentArtist!, song: currentSong!), withExtension: currentSong!.xtension)
-        do {
-            try audioPlayer = AVAudioPlayer(contentsOf: currentSongURL!)
+    /**
+     This is a method to initialize the AudioPlayer for the first time.
+     */
+    func initializeAudioPlayer(artist: Artist, song: Song) {
+        let currentSongURL = Bundle.main.url(forResource: self.giveNameOfFile(artiest: artist, song: song), withExtension: currentSong!.xtension)
+            try? audioPlayer = AVAudioPlayer(contentsOf: currentSongURL!)
             audioPlayer!.volume = self.volumeSlider.value
-            playButton.setImage(UIImage(named: "Play.png"), for: .normal)
-        }
-        catch {
-            print(error)
-        }
+            checkPlayOrPause()
+        //playButton.setImage(UIImage(named: "Play.png"), for: .normal)
     }
     
+    /**
+     This is a method to initialize the AudioPlayer, but also to play a song
+     */
     func playSong(artist: Artist, song: Song) {
-        let currentSongURL = Bundle.main.url(forResource: self.giveNameOfFile(artiest: artist, song: song), withExtension: song.xtension)
-        do {
-            try audioPlayer = AVAudioPlayer(contentsOf: currentSongURL!)
-            audioPlayer!.volume = self.volumeSlider.value
-            audioPlayer!.play()
-            checkPlayOrPause()
-            MusicViewController.firstTime = false
-            
-        }
-        catch {
-            print(error)
-        }
+        initializeAudioPlayer(artist: currentArtist!, song: currentSong!)
+        audioPlayer!.play()
+        checkPlayOrPause()
+        MusicViewController.firstTime = false
     }
     
     func showNextArtist() {
@@ -296,13 +237,9 @@ class MusicViewController: UIViewController {
                 return
             } else {
                 showAlertWithConfirmationWhenUnplayedArtistsAreEmpty(title: "No artists", message: "There are no more artists to show!\nGo to Settings and change your genre or reset your app end start over.")
-                //audioPlayer!.stop()
                 return
             }
         }
-        //if SettingsModelController.settings?.genre != "Not Set" {
-            //ArtistModelController.importSettings()
-        //}
         
         ArtistModelController.importSettings()
         currentArtist = ca
@@ -311,13 +248,11 @@ class MusicViewController: UIViewController {
         if let song = getNextSongFromCurrentArtist(){
             currentSong = song
             updateGUI(artiest: currentArtist!, currentSong: currentSong!)
-        } else {
-            showAlert(title: "No songs", message: "There are no songs from \(currentArtist!.name)", time: 2)
         }
     }
     
     func dislikeArtist(art: Artist) {
-        moveUnPlayedArtistToPlayed(art: currentArtist!)
+        ArtistModelController.moveUnPlayedArtistToPlayed(art: currentArtist!)
         if ArtistModelController.dislikedArtists.contains(art) {
             return
         }
@@ -325,7 +260,7 @@ class MusicViewController: UIViewController {
     }
     
     func likeArtist(art: Artist) {
-        moveUnPlayedArtistToPlayed(art: currentArtist!)
+        ArtistModelController.moveUnPlayedArtistToPlayed(art: currentArtist!)
         if ArtistModelController.likedArtists.contains(art) {
           return
         }
@@ -336,7 +271,6 @@ class MusicViewController: UIViewController {
         if currentArtist!.album.songs.count >= tellerSongs+1 {
             let next = currentArtist!.album.songs[tellerSongs]
             tellerSongs += 1
-            
             return next
         } else {
             return nil
@@ -355,8 +289,5 @@ class MusicViewController: UIViewController {
         return "\(artiest.name) - \(artiest.album.name) - \(artiest.album.year) - \(artiest.album.genre) - \(song.title)"
     }
     
-    func moveUnPlayedArtistToPlayed(art: Artist) {
-        ArtistModelController.playedArtists.append(ArtistModelController.unplayedArtists.remove(at: ArtistModelController.unplayedArtists.firstIndex{ $0 == art }!))
-    }
 }
 

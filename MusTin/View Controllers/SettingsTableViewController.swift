@@ -18,15 +18,9 @@ class SettingsTableViewController: UITableViewController, SelectGenreTableViewCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        audioPlayer?.stop()
         settings = SettingsModelController.settings
-        
         updateGUI()
-    }
-    
-    
-    @IBAction func resetApp(_ sender: UIButton) {
-        //self.dismiss(animated: true, completion: nil)
     }
     
     func updateGUI() {
@@ -50,7 +44,7 @@ class SettingsTableViewController: UITableViewController, SelectGenreTableViewCo
     override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
         super.prepare(for: segue, sender: sender)
         
-        if segue.identifier == "saveUnwind" {
+        if segue.identifier == "SaveUnwind" {
             SettingsModelController.saveSettingsData()
             ArtistModelController.importSettings()
             MusicViewController.firstTime = true
@@ -61,18 +55,28 @@ class SettingsTableViewController: UITableViewController, SelectGenreTableViewCo
                 destinationViewController?.genre = genre
             } else {
                 if segue.identifier == "ResetUnwind" {
-                    _ = SettingsModelController.init()
-                    ArtistModelController.clearData()
-                    _ = ArtistModelController.init()
-                    
-                    MusicViewController.firstTime = true
-                    
+                    showAlertWithConfirmation(title: "No artists", message: "Are you sure you want to reset your data?\nIf you click on Start over, everything will be lost!")
                 } else {
                     return
                 }
             }
         }
         
+    }
+    
+    func showAlertWithConfirmation(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let confirmAction = UIAlertAction(title: "Start over", style: .destructive, handler: {
+            action in
+                ArtistModelController.clearData()
+                SettingsModelController.saveSettingsData()
+        })
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 
 }

@@ -40,7 +40,6 @@ class ArtistModelController {
     }
     
     static func importSettings() {
-        //_ = SettingsModelController.init()
         let art = ArtistModelController.allArtists.filter( { !ArtistModelController.playedArtists.contains($0) } )
         let sett = SettingsModelController.settings
         
@@ -53,10 +52,21 @@ class ArtistModelController {
     }
     
     static func clearData() {
+        _ = SettingsModelController.init()
         ArtistModelController.unplayedArtists = []
         ArtistModelController.playedArtists = []
         ArtistModelController.dislikedArtists = []
         ArtistModelController.likedArtists = []
+        _ = ArtistModelController.init()
+        MusicViewController.firstTime = true
+    }
+    
+    static func moveUnPlayedArtistToPlayed(art: Artist) {
+        ArtistModelController.playedArtists.append(ArtistModelController.unplayedArtists.remove(at: ArtistModelController.unplayedArtists.firstIndex{ $0 == art }!))
+    }
+    
+    static func removeLikedArtist(index: Int) {
+        ArtistModelController.dislikedArtists.append(ArtistModelController.likedArtists.remove(at: index))
     }
     
     //---------------------------------------Data methods--------------------------------------------------

@@ -15,7 +15,7 @@ class LikedArtistTableViewCell: UITableViewCell {
     
     func update(with artist: Artist) {
         artistNameLabel.text = artist.name
-        albumTitleAndYearLabel.text = "\(artist.album.name) - \(String(artist.album.year))"
+        albumTitleAndYearLabel.text = artist.getAlbumString()
         genreLabel.text = artist.album.genre
     }
     

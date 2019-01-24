@@ -12,4 +12,8 @@ class Artist: Codable, Equatable {
     static func == (lhs: Artist, rhs: Artist) -> Bool {
         return lhs.name == rhs.name && lhs.album.name == rhs.album.name && lhs.album.year == rhs.album.year
     }
+    
+    func getAlbumString() -> String {
+        return "\(self.album.name) - \(String(self.album.year))"
+    }
 }

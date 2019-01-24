@@ -218,7 +218,6 @@
                                                     <rect key="frame" x="108.5" y="7" width="103" height="30"/>
                                                     <state key="normal" title="Reset your app"/>
                                                     <connections>
-                                                        <action selector="resetApp:" destination="gaQ-IY-7BZ" eventType="touchUpInside" id="kdp-Dv-jKy"/>
                                                         <segue destination="ahG-iK-Lgt" kind="unwind" identifier="ResetUnwind" unwindAction="unwindToMusicViewWithSegue:" id="AZv-zG-B6O"/>
                                                     </connections>
                                                 </button>
@@ -240,7 +239,7 @@
                     <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="never" id="GBH-lM-VpH">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Lz8-Un-eYE">
                             <connections>
-                                <segue destination="ahG-iK-Lgt" kind="unwind" identifier="saveUnwind" unwindAction="unwindToMusicViewWithSegue:" id="SXu-K4-b64"/>
+                                <segue destination="ahG-iK-Lgt" kind="unwind" identifier="SaveUnwind" unwindAction="unwindToMusicViewWithSegue:" id="SXu-K4-b64"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

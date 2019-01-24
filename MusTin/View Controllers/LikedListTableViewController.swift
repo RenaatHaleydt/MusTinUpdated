@@ -32,7 +32,7 @@ class LikedListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return ArtistModelController.likedArtists.count
-        } else{
+        } else {
             return 0
         }
     }
@@ -53,7 +53,7 @@ class LikedListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            ArtistModelController.dislikedArtists.append(ArtistModelController.likedArtists.remove(at: indexPath.row))
+            ArtistModelController.removeLikedArtist(index: indexPath.row)
             // Delete the row from the data source
             //tableView.deleteRows(at: [indexPath], with: .fade) // Geeft error!
             tableView.reloadData()
